@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Platform</title>
+  <style>
+    /* Base reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f9fafb;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      width: 60px;
+      margin-bottom: 0.5rem;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #059669;
+    }
+
+    /* Card base */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      background: #fff;
+      padding: 1.5rem;
+    }
+
+    /* Two-column cards */
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .option-card svg {
+      width: 32px;
+      height: 32px;
+      color: #059669;
+      margin-bottom: 1rem;
+    }
+
+    .option-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .option-card p {
+      font-size: 0.95rem;
+      color: #374151;
+      margin-bottom: 1rem;
+    }
+
+    .option-card ul {
+      list-style: none;
+    }
+
+    .option-card ul li {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 0.3rem;
+    }
+
+    /* Alert card */
+    .alert-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      background: #fff;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .alert-card svg {
+      width: 28px;
+      height: 28px;
+      color: #059669;
+      flex-shrink: 0;
+    }
+
+    .alert-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .alert-card p {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    /* Main section card */
+    .main-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      background: #fff;
+      padding: 2rem;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .main-card h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .input-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .input-group input:focus:not([disabled]) {
+      border-color: #059669;
+      box-shadow: 0 0 0 2px rgba(5,150,105,0.2);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: #059669;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 0.5rem;
+    }
+
+    .btn:hover {
+      background: #047857;
+    }
+
+    /* OTP */
+    .otp-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .otp-input {
+      width: 3rem;
+      height: 3.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+      border: 1px solid #d1d5db;
+      border-radius: 0.5rem;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .main-card h4 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Next steps list */
+    .steps {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .steps svg {
+      width: 22px;
+      height: 22px;
+      color: #059669;
+      flex-shrink: 0;
+    }
+
+    .login-link {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .login-link a {
+      color: #059669;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>QardHasana</h1>
+  </header>
+
+  <!-- Options -->
+  <div class="options">
+    <div class="card option-card">
+      <!-- Person icon -->
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="7" r="4"/>
+        <path d="M6 21v-2a6 6 0 0112 0v2"/>
+      </svg>
+      <h3>Join as a Supporter</h3>
+      <p>Donate $10-$500 to help entrepreneurs cover their monthly overheads</p>
+      <ul>
+        <li>Always free to use</li>
+        <li>Support meaningful projects</li>
+        <li>Transparent donation tracking</li>
+      </ul>
+    </div>
+
+    <div class="card option-card">
+      <!-- Building icon -->
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 21h18M9 8h6M4 21V9a1 1 0 011-1h14a1 1 0 011 1v12"/>
+      </svg>
+      <h3>Join as a Host</h3>
+      <p>Receive donations for your startup or entrepreneurial project</p>
+      <ul>
+        <li>Free donation features</li>
+        <li>Embeddable donation widget</li>
+        <li>Dashboard &amp; analytics</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Alert -->
+  <div class="alert-card">
+    <!-- Shield icon -->
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+    <div>
+      <h4>Host Application Process</h4>
+      <p>Host accounts require approval to ensure platform quality. Our review process typically takes 2-3 business days. You'll receive email notifications throughout the process.</p>
+    </div>
+  </div>
+
+  <!-- Main card -->
+  <div class="main-card">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+      <button type="button" class="btn" id="continueBtn">Send OTP</button>
+
+      <!-- OTP -->
+      <div id="otpSection" style="display:none;">
+        <div class="otp-container">
+          <input type="text" maxlength="1" class="otp-input" />
+          <input type="text" maxlength="1" class="otp-input" />
+          <input type="text" maxlength="1" class="otp-input" />
+          <input type="text" maxlength="1" class="otp-input" />
+          <input type="text" maxlength="1" class="otp-input" />
+          <input type="text" maxlength="1" class="otp-input" />
+        </div>
+        <button type="submit" class="btn">Verify OTP</button>
+      </div>
+    </form>
+
+    <div class="divider"></div>
+    <h4>What happens next?</h4>
+    <ul class="steps">
+      <li>
+        <!-- Clock -->
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        <div>
+          <strong>Instant Access (Supporters)</strong><br>
+          Start supporting projects immediately
+        </div>
+      </li>
+      <li>
+        <!-- Shield -->
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <div>
+          <strong>Application Review (Hosts)</strong><br>
+          2-3 business day approval process
+        </div>
+      </li>
+      <li>
+        <!-- Check -->
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4"/>
+          <circle cx="12" cy="12" r="10"/>
+        </svg>
+        <div>
+          <strong>Account Activation</strong><br>
+          Email confirmation and platform access
+        </div>
+      </li>
+    </ul>
+    <div class="login-link">
+      Already have an account? <a href="#">Log in</a>
+    </div>
+  </div>
+
+  <script>
+    const continueBtn = document.getElementById("continueBtn");
+    const emailInput = document.getElementById("email");
+    const otpSection = document.getElementById("otpSection");
+    const otpInputs = document.querySelectorAll(".otp-input");
+
+    continueBtn.addEventListener("click", () => {
+      if (emailInput.value.trim() !== "") {
+        emailInput.disabled = true;
+        continueBtn.style.display = "none";
+        otpSection.style.display = "block";
+        otpInputs[0].focus();
+      }
+    });
+
+    otpInputs.forEach((input, index) => {
+      input.addEventListener("input", () => {
+        if (input.value && index < otpInputs.length - 1) {
+          otpInputs[index + 1].focus();
+        }
+      });
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && !input.value && index > 0) {
+          otpInputs[index - 1].focus();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

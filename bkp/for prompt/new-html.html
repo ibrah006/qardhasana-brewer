@@ -1,0 +1,143 @@
+<div class="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <h2 class="modal-title">Community Development Project</h2>
+            <p class="modal-subtitle">Support this cause through QardHasana</p>
+        </div>
+
+        <div class="modal-body">
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab(this, 'support')">Support</button>
+                <button class="tab" onclick="switchTab(this, 'loan')">Loan</button>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Select Asset</label>
+                <div class="dropdown">
+                    <select class="dropdown-select" onchange="updateAssetDescription(this.value)">
+                        <option value="general">General Support</option>
+                        <option value="equipment">Medical Equipment</option>
+                        <option value="facility">Community Facility</option>
+                        <option value="education">Education Program</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="asset-card">
+                <p class="asset-description" id="assetDescription">
+                    Your contribution helps the host manage ongoing operational and daily expenses.
+                </p>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span class="progress-label">Funding Progress</span>
+                    <span class="progress-amount">$6,500 / $10,000</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Contribution Amount</label>
+                <div class="amount-input-group">
+                    <div class="amount-input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input 
+                            type="number" 
+                            class="amount-input" 
+                            placeholder="0.00"
+                            id="amountInput"
+                            min="0"
+                            step="0.01"
+                        >
+                    </div>
+                </div>
+                <div class="amount-options">
+                    <button class="amount-option" onclick="selectAmount(this, 5)">$5</button>
+                    <button class="amount-option" onclick="selectAmount(this, 10)">$10</button>
+                    <button class="amount-option" onclick="selectAmount(this, 25)">$25</button>
+                    <button class="amount-option" onclick="selectAmount(this, 50)">$50</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">
+                    Your Name
+                    <span class="optional-label">(optional)</span>
+                </label>
+                <input 
+                    type="text" 
+                    class="text-input" 
+                    placeholder="Enter your name"
+                >
+            </div>
+
+            <div class="checkbox-group">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" class="checkbox-input" id="agreementCheck">
+                </div>
+                <label for="agreementCheck" class="checkbox-label">
+                    I am contributing purely out of admiration and willingness to help, not for profit.
+                </label>
+            </div>
+
+            <button class="submit-button" onclick="handleSubmit()">
+                Proceed to Payment
+            </button>
+        </div>
+
+        <div class="modal-footer">
+            <p class="powered-by">
+                Powered by <a href="https://qardhasana.com" target="_blank">QardHasana</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const assetDescriptions = {
+        general: "Your contribution helps the host manage ongoing operational and daily expenses.",
+        equipment: "Support the acquisition of essential medical equipment to improve healthcare services in the community.",
+        facility: "Help build and maintain community facilities that serve as gathering spaces and resource centers.",
+        education: "Fund educational programs that provide learning opportunities and skill development for community members."
+    };
+
+    function switchTab(element, tabType) {
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        element.classList.add('active');
+    }
+
+    function updateAssetDescription(value) {
+        const descriptionElement = document.getElementById('assetDescription');
+        descriptionElement.textContent = assetDescriptions[value] || assetDescriptions.general;
+    }
+
+    function selectAmount(element, amount) {
+        document.querySelectorAll('.amount-option').forEach(option => {
+            option.classList.remove('selected');
+        });
+        element.classList.add('selected');
+        document.getElementById('amountInput').value = amount;
+    }
+
+    function handleSubmit() {
+        const amount = document.getElementById('amountInput').value;
+        const checkbox = document.getElementById('agreementCheck');
+        
+        if (!amount || amount <= 0) {
+            alert('Please enter a valid contribution amount.');
+            return;
+        }
+        
+        if (!checkbox.checked) {
+            alert('Please confirm your contribution intent by checking the agreement.');
+            return;
+        }
+        
+        alert('Proceeding to payment gateway...');
+    }
+</script>

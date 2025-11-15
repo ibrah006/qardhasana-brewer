@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Modern Modal Container */
+/* Modern Modal Container */
+.qh-modal-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  max-width: 440px;
+  margin: 40px auto;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Header with Primary Color Accent */
+.qh-modal-header {
+  padding: 24px 24px 16px;
+  border-bottom: none;
+}
+
+.qh-modal-header h2 {
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.qh-subtitle {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Modern Tabs */
+.qh-tab-container {
+  display: flex;
+  padding: 0 24px;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.qh-tab {
+  flex: 1;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border: none;
+  border-radius: 8px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qh-tab.active {
+  background: #267357;
+  color: white;
+}
+
+/* Modern Dropdown */
+.qh-dropdown-container {
+  padding: 0 24px;
+  margin-bottom: 16px;
+}
+
+.qh-dropdown {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e1e5e9;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.qh-dropdown:focus {
+  outline: none;
+  border-color: #267357;
+}
+
+/* Description Card */
+.qh-description-card {
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.qh-description {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-left: 3px solid #267357;
+}
+
+/* Modern Progress Bar */
+.qh-progress-section {
+  padding: 0 24px;
+  margin-bottom: 24px;
+}
+
+.qh-progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.qh-progress-bar {
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.qh-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #267357, #32a583);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* Amount Section */
+.qh-amount-section {
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.qh-amount-section label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.qh-amount-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.qh-amount-input:focus {
+  outline: none;
+  border-color: #267357;
+}
+
+.qh-amount-options {
+  display: flex;
+  gap: 8px;
+}
+
+.qh-amount-option {
+  flex: 1;
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border: 1.5px solid #e1e5e9;
+  border-radius: 6px;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qh-amount-option:hover {
+  border-color: #267357;
+  color: #267357;
+}
+
+/* Name Field */
+.qh-name-field {
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.qh-name-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.qh-name-field input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.qh-name-field input:focus {
+  outline: none;
+  border-color: #267357;
+}
+
+/* Modern Checkbox */
+.qh-checkbox-container {
+  padding: 0 24px;
+  margin-bottom: 24px;
+}
+
+.qh-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.qh-checkbox input {
+  display: none;
+}
+
+.qh-checkmark {
+  min-width: 18px;
+  height: 18px;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  transition: all 0.2s ease;
+  position: relative;
+  margin-top: 2px;
+}
+
+.qh-checkbox input:checked + .qh-checkmark {
+  background: #267357;
+  border-color: #267357;
+}
+
+.qh-checkbox input:checked + .qh-checkmark::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Proceed Button */
+.qh-proceed-button {
+  width: calc(100% - 48px);
+  margin: 0 24px 20px;
+  padding: 14px 24px;
+  background: #267357;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.qh-proceed-button:hover {
+  background: #1f5f46;
+}
+
+/* Footer */
+.qh-modal-footer {
+  padding: 0 24px 24px;
+  text-align: center;
+}
+
+.qh-powered-by {
+  color: #267357;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.qh-powered-by:hover {
+  color: #1f5f46;
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <!-- This is a visual representation of the modal structure -->
+<div class="qh-modal-overlay">
+    <div class="qh-modal-container">
+      
+      <!-- Modal Header -->
+      <div class="qh-modal-header">
+        <h2>Host Name</h2>
+        <p class="qh-subtitle">Support this cause through QardHasana</p>
+      </div>
+  
+      <!-- Tabs -->
+      <div class="qh-tab-container">
+        <button class="qh-tab active">Support</button>
+        <button class="qh-tab">Loan</button>
+      </div>
+  
+      <!-- Dropdown -->
+      <div class="qh-dropdown-container">
+        <select class="qh-dropdown">
+          <option value="general">General Support</option>
+          <option value="asset1">Asset Name 1</option>
+          <option value="asset2">Asset Name 2</option>
+        </select>
+      </div>
+  
+      <!-- Description Card -->
+      <div class="qh-description-card">
+        <p class="qh-description">Your contribution helps the host manage ongoing operational and daily expenses.</p>
+      </div>
+  
+      <!-- Progress Bar -->
+      <div class="qh-progress-section">
+        <div class="qh-progress-info">
+          <span>$1,540 raised</span>
+          <span>$2,500 goal</span>
+        </div>
+        <div class="qh-progress-bar">
+          <div class="qh-progress-fill" style="width: 62%"></div>
+        </div>
+      </div>
+  
+      <!-- Amount Selection -->
+      <div class="qh-amount-section">
+        <label>Contribution Amount</label>
+        <input type="text" class="qh-amount-input" placeholder="Enter amount" value="$">
+        
+        <div class="qh-amount-options">
+          <button class="qh-amount-option">$5</button>
+          <button class="qh-amount-option">$10</button>
+          <button class="qh-amount-option">$25</button>
+          <button class="qh-amount-option">$50</button>
+        </div>
+      </div>
+  
+      <!-- Name Field -->
+      <div class="qh-name-field">
+        <label>Your Name (Optional)</label>
+        <input type="text" placeholder="Enter your name">
+      </div>
+  
+      <!-- Checkbox -->
+      <div class="qh-checkbox-container">
+        <label class="qh-checkbox">
+          <input type="checkbox">
+          <span class="qh-checkmark"></span>
+          I am contributing purely out of admiration and willingness to help, not for profit.
+        </label>
+      </div>
+  
+      <!-- Proceed Button -->
+      <button class="qh-proceed-button">Proceed to Payment</button>
+  
+      <!-- Footer -->
+      <div class="qh-modal-footer">
+        <a href="https://qardhasana.com" class="qh-powered-by">Powered by QardHasana</a>
+      </div>
+  
+    </div>
+  </div>
+</body>
+</html>

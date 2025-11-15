@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to QardHasana</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f3f4f6;
+      line-height: 1.6;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+    }
+    .header { background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .header-subtitle {
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 16px;
+      margin: 0;
+    }
+    .content {
+      padding: 40px 30px;
+    }
+    .greeting {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 20px;
+    }
+    .text {
+      color: #475569;
+      font-size: 16px;
+      margin: 0 0 20px;
+    }
+    .steps-container {
+      background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+      border: 1px solid #a7f3d0;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 30px 0;
+    }
+    .steps-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 20px;
+      text-align: center;
+    }
+    .step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      align-items: start;
+    }
+    .step:last-child {
+      margin-bottom: 0;
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .step-content h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .step-content p {
+      margin: 0;
+      font-size: 14px;
+      color: #475569;
+    }
+    .info-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+    .info-box-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e40af;
+      margin: 0 0 10px;
+    }
+    .info-box-text {
+      font-size: 14px;
+      color: #1e3a8a;
+      margin: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .footer {
+      background: #f9fafb;
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      border-radius: 0 0 10px 10px
+    }
+    .footer-text {
+      color: #6b7280;
+      font-size: 14px;
+      margin: 0 0 15px;
+    }
+    .footer-links {
+      margin: 15px 0;
+    }
+    .footer-link {
+      color: #15803d;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+    .divider {
+      height: 1px;
+      background: #e5e7eb;
+      margin: 30px 0;
+    }
+    @media only screen and (max-width: 600px) {
+      .content {
+        padding: 30px 20px;
+        border-radius: 0 0 10px 10px
+      }
+      .header {
+        padding: 30px 20px;
+      }
+      .greeting {
+        font-size: 20px;
+      }
+      .steps-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        
+        <span>QardHasana</span>
+      </div>
+      <p class="header-subtitle">Startup Support Platform</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h1 class="greeting">Welcome to QardHasana! 🎉</h1>
+      
+      <p class="text">
+        Thank you for registering as a host with QardHasana. We're excited to help you raise funds for your cause through ethical, interest-free financing.
+      </p>
+
+      <p class="text">
+        Your account has been created and is currently under review by our team.
+      </p>
+
+      <!-- Next Steps -->
+      <div class="steps-container">
+        <h2 class="steps-title">What Happens Next</h2>
+        
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Account Review</h4>
+            <p>Our team will verify your registration details and documentation to ensure platform security.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Verification Process</h4>
+            <p>We'll complete identity verification and compliance checks. This typically takes 24-48 hours.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Dashboard Access</h4>
+            <p>Once approved, you'll receive an email with instructions to access your host dashboard and start creating campaigns.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Important Info -->
+      <div class="info-box">
+        <div class="info-box-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+          <span>Estimated Timeline</span>
+        </div>
+        <p class="info-box-text">
+          Most accounts are reviewed within 24-48 hours. We'll notify you via email as soon as your account is approved and ready to use.
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="text">
+        In the meantime, feel free to explore our platform and learn more about how QardHasana works.
+      </p>
+
+      <p class="text">
+        If you have any questions or need assistance, don't hesitate to reach out to our support team.
+      </p>
+
+      <p class="text" style="margin-top: 30px; font-weight: 600; color: #0f172a;">
+        Best regards,<br>
+        The QardHasana Team
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p class="footer-text">
+        © 2024 QardHasana. All rights reserved.
+      </p>
+      <div class="footer-links">
+        <a href="https://qardhasana.com" class="footer-link">Visit Website</a>
+        <a href="https://qardhasana.com/help" class="footer-link">Help Center</a>
+        <a href="https://qardhasana.com/contact" class="footer-link">Contact Us</a>
+      </div>
+      <p class="footer-text" style="font-size: 12px; margin-top: 20px;">
+        This email was sent to you because you registered for a host account on QardHasana.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
