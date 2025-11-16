@@ -5133,40 +5133,40 @@
             //   contributionData.amount.toFixed(2) + ' has been processed successfully. Thank you for your support!';
             // document.getElementById('success-message').textContent = successMessage;
             if (contributionData.type === "loan") {
-            document.getElementById('success-loan-amount-value').innerHTML = "$" + contributionData.amount.toString();
-            // Monthly amount
-            document.getElementById('success-loan-info-value').innerHTML = "sample";
-            // First repayment date
-            const date = new Date();
-            date.setDate(date.getDate() + 30);
-            // Formatted
-            const firstRepaymentDate = date.toLocaleDateString("en-US", {
-              month: "short",
-              day: "2-digit",
-              year: "numeric",
-            });
-            document.getElementById('success-monthly-payment-amount').innerHTML = (contributionData.amount/contributionData.repaymentMonths).toFixed(2);
-            document.getElementById('success-loan-info-value').innerHTML = firstRepaymentDate;
+              document.getElementById('success-loan-amount-value').innerHTML = "$" + contributionData.amount.toString();
+              // Monthly amount
+              document.getElementById('success-loan-info-value').innerHTML = "sample";
+              // First repayment date
+              const date = new Date();
+              date.setDate(date.getDate() + 30);
+              // Formatted
+              const firstRepaymentDate = date.toLocaleDateString("en-US", {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+              });
+              document.getElementById('success-monthly-payment-amount').innerHTML = (contributionData.amount/contributionData.repaymentMonths).toFixed(2);
+              document.getElementById('success-loan-info-value').innerHTML = firstRepaymentDate;
 
-            document.getElementById('success-loan-term').innerHTML = "To be repaid over " + contributionData.repaymentMonths + " months";
-            document.getElementById('loan-success-container').style.display = 'block';
-            document.getElementById('support-success-container').style.display = 'none';
-            document.getElementById('success-close-button').addEventListener("click", ()=> {
-              closeModal();
-            });
-          } else {
-            document.getElementById('support-amount-value').innerHTML = '$'+contributionData.amount.toString();
-            document.getElementById('startup-name').innerHTML = widgetData.host.displayName;
+              document.getElementById('success-loan-term').innerHTML = "To be repaid over " + contributionData.repaymentMonths + " months";
+              document.getElementById('loan-success-container').style.display = 'block';
+              document.getElementById('support-success-container').style.display = 'none';
+              document.getElementById('success-close-button').addEventListener("click", ()=> {
+                closeModal();
+              });
+            } else {
+              document.getElementById('support-amount-value').innerHTML = '$'+contributionData.amount.toString();
+              document.getElementById('startup-name').innerHTML = widgetData.host.displayName;
 
-            document.getElementById('loan-success-container').style.display = 'none';
-            document.getElementById('support-success-container').style.display = 'block';
+              document.getElementById('loan-success-container').style.display = 'none';
+              document.getElementById('support-success-container').style.display = 'block';
 
-            document.getElementById('support-success-close-button').addEventListener("click", ()=> {
-              closeModal();
-            });
-          }
+              document.getElementById('support-success-close-button').addEventListener("click", ()=> {
+                closeModal();
+              });
+            }
 
-          showScreen('success-screen');
+            showScreen('success-screen');
           } catch (error) {
             console.error('Payment error:', error);
             submitBtn.disabled = false;
