@@ -3457,6 +3457,194 @@
                 padding: 20px 24px 24px;
             }
         }
+
+        /* Success Support Styling */
+        /* Support Details Card */
+        .support-details-card {
+            background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
+            border: 1px solid #e0f2ed;
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .support-amount-section {
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e0f2ed;
+        }
+
+        .support-amount-label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .support-amount-value {
+            font-size: 48px;
+            font-weight: 700;
+            color: #267357;
+            line-height: 1;
+        }
+
+        .startup-info {
+            margin-bottom: 20px;
+        }
+
+        .startup-label {
+            font-size: 12px;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .startup-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .impact-highlight {
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Nature of Support Box */
+        .nature-box {
+            background: #f0f9ff;
+            border: 2px solid #bae6fd;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .nature-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .nature-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .nature-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .nature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nature-list li {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .nature-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .nature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 2px;
+            color: #0ea5e9;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* Use of Funds Section */
+        .funds-section {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .funds-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .funds-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .funds-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .funds-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .funds-note {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #267357;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        /* Footer */
+
+        .footer-link {
+            color: #267357;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .support-amount-value {
+                font-size: 40px;
+            }
+        }
       `.replace(/#15803d/g, hostColor);
     
       const styleSheet = document.createElement("style");
@@ -3738,7 +3926,87 @@
     
             <!-- Screen 3: Success -->
             <div class='screen' id='success-screen'>
-              <div class="success-container">
+              <div id="support-success-container">
+                <!-- Header -->
+                <div class="success-header">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="3">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                    </div>
+                    <h1 class="success-title">Thank You!</h1>
+                    <p class="success-subtitle">
+                        Your support has been successfully processed. Your generosity makes a real difference.
+                    </p>
+                </div>
+
+                <!-- Content -->
+                <div class="success-content">
+                    <!-- Support Details -->
+                    <div class="support-details-card">
+                        <div class="support-amount-section">
+                            <div class="support-amount-label">Support Amount</div>
+                            <div class="support-amount-value" id="support-amount-value">$250</div>
+                        </div>
+                        
+                        <div class="startup-info">
+                            <div class="startup-label">Supporting</div>
+                            <div class="startup-name" id="startup-name">TechStart Labs</div>
+                        </div>
+
+                        <div class="impact-highlight">
+                            <strong>Your Impact:</strong> Your support helps cover essential operational costs and gives this startup breathing room to grow.
+                        </div>
+                    </div>
+
+                    <!-- Nature of Support -->
+                    <div class="nature-box">
+                        <div class="nature-header">
+                            <svg class="nature-icon" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4M12 8h.01"/>
+                            </svg>
+                            <h3 class="nature-title">Voluntary Support Contribution</h3>
+                        </div>
+                        <ul class="nature-list">
+                            <li>This is a voluntary act of support</li>
+                            <li>It is not a loan</li>
+                            <li>There is no repayment expected or required</li>
+                        </ul>
+                    </div>
+
+                    <!-- Use of Funds -->
+                    <div class="funds-section">
+                        <div class="funds-header">
+                            <svg class="funds-icon" viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                            <h3 class="funds-title">How Your Support Helps</h3>
+                        </div>
+                        <p class="funds-description">
+                            Funds help founders cover daily operations, early-stage expenses, and critical survival costs during their journey to build something meaningful.
+                        </p>
+                        <div class="funds-note">
+                            Startups will share updates whenever possible to keep you informed of their progress.
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <a href="https://qardhasana.com/dashboard" class="btn btn-primary">View Dashboard</a>
+                        <button class="btn btn-secondary" id="support-success-close-button">Close</button>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="success-footer">
+                    <p class="footer-text">
+                        Questions? <a href="https://qardhasana.com/support" class="footer-link">Contact Support</a>
+                    </p>
+                </div>
+              </div>
+              <div id="loan-success-container">
                   <!-- Header -->
                   <div class="success-header">
                       <div class="success-icon">
@@ -3836,7 +4104,7 @@
 
                       <!-- Action Buttons -->
                       <div class="action-buttons">
-                          <a href="#" class="btn btn-primary" id="success-view-loan-dashboard">View Loan Dashboard</a>
+                          <a href="https://www.qardhasana.com/dashboard" class="btn btn-primary" id="success-view-loan-dashboard">View Loan Dashboard</a>
                           <button class="btn btn-secondary" id="success-close-button">Close</button>
                       </div>
                   </div>
@@ -4864,6 +5132,7 @@
             // const successMessage = 'Your ' + contributionData.type + ' of $' + 
             //   contributionData.amount.toFixed(2) + ' has been processed successfully. Thank you for your support!';
             // document.getElementById('success-message').textContent = successMessage;
+            if (contributionData.type === "loan") {
             document.getElementById('success-loan-amount-value').innerHTML = "$" + contributionData.amount.toString();
             // Monthly amount
             document.getElementById('success-loan-info-value').innerHTML = "sample";
@@ -4878,14 +5147,26 @@
             });
             document.getElementById('success-monthly-payment-amount').innerHTML = (contributionData.amount/contributionData.repaymentMonths).toFixed(2);
             document.getElementById('success-loan-info-value').innerHTML = firstRepaymentDate;
-            document.getElementById('success-view-loan-dashboard').addEventListener("click", ()=> {
-              window.location.href = "https://www.qardhasana.com/dashboard";
-            });
+
+            document.getElementById('success-loan-term').innerHTML = "To be repaid over " + contributionData.repaymentMonths + " months";
+            document.getElementById('loan-success-container').style.display = 'block';
+            document.getElementById('support-success-container').style.display = 'none';
             document.getElementById('success-close-button').addEventListener("click", ()=> {
               closeModal();
             });
-            document.getElementById('success-loan-term').innerHTML = "To be repaid over " + contributionData.repaymentMonths + " months";
-            showScreen('success-screen');
+          } else {
+            document.getElementById('support-amount-value').innerHTML = '$'+contributionData.amount.toString();
+            document.getElementById('startup-name').innerHTML = widgetData.host.displayName;
+
+            document.getElementById('loan-success-container').style.display = 'none';
+            document.getElementById('support-success-container').style.display = 'block';
+
+            document.getElementById('support-success-close-button').addEventListener("click", ()=> {
+              closeModal();
+            });
+          }
+
+          showScreen('success-screen');
           } catch (error) {
             console.error('Payment error:', error);
             submitBtn.disabled = false;
