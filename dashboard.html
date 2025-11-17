@@ -2170,8 +2170,7 @@
     <script>
       
 
-      // "acct_1SQpjyGtDGEo1d3b"
-    window.__QARDHASANA_WIDGET_DATA__ = {"host":{"displayName":"Ibrahim","stripeAccountId":null,"stripeVerified":false,"widgetColor":"#15803d"},"assets":[{"id":5,"title":"Sample","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":25},{"id":7,"title":"Leap 2027","shortDescription":null,"fundGoal":4000,"repaymentCapableAmount":4000,"currentAmountRaised":50},{"id":10,"title":"Qard Al Hasan","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":0},{"id":15,"title":"My New Asset","shortDescription":null,"fundGoal":10000,"repaymentCapableAmount":1000,"currentAmountRaised":1000},{"id":34,"title":"My Asset","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":0,"currentAmountRaised":0},{"id":35,"title":"My Asset","shortDescription":null,"fundGoal":1001,"repaymentCapableAmount":1000,"currentAmountRaised":0}]};
+    window.__QARDHASANA_WIDGET_DATA__ = {"host":{"displayName":"Ibrahim","stripeAccountId":"acct_1SQpjyGtDGEo1d3b","stripeVerified":true,"widgetColor":"#15803d"},"assets":[{"id":5,"title":"Sample","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":25},{"id":7,"title":"Leap 2027","shortDescription":null,"fundGoal":4000,"repaymentCapableAmount":4000,"currentAmountRaised":50},{"id":10,"title":"Qard Al Hasan","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":0},{"id":15,"title":"My New Asset","shortDescription":null,"fundGoal":10000,"repaymentCapableAmount":1000,"currentAmountRaised":1000},{"id":34,"title":"My Asset","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":0,"currentAmountRaised":0},{"id":35,"title":"My Asset","shortDescription":null,"fundGoal":1001,"repaymentCapableAmount":1000,"currentAmountRaised":0}]};
     
     (function () {
       "use strict";
@@ -4892,6 +4891,10 @@
     
         // Initialize widget with data
         function initializeWidget() {
+
+          // Amount Input
+          document.getElementById('amount').max = 1000;
+
           // Check for existing session
           checkExistingSession();
           
@@ -5180,7 +5183,12 @@
             loanInputs.forEach(i => i.required = true);
     
             // Hide name field for loans
-            document.getElementById("name").style = "none";
+            document.getElementById("name").style.display = "none";
+            
+            // Amount input
+            const selectedAsset = widgetData.assets.find(asset=> asset.id == selectedAssetId);
+            const maxFundable = selectedAsset.fundGoal - selectedAsset.currentAmountRaised;
+            document.getElementById("amount").max = maxFundable>5000? 5000 : maxFundable;
             
             // Check loan availability when switching to loan tab
             updateLoanTabAvailability();
@@ -5483,6 +5491,11 @@
             selectedAssetId = null;
           } else {
             selectedAssetId = parseInt(value);
+
+            // Amount Input
+            const selectedAsset = widgetData.assets.find(asset=> asset.id == selectedAssetId);
+            const maxFundable = selectedAsset.fundGoal - selectedAsset.currentAmountRaised;
+            document.getElementById('amount').max = maxFundable<=1000? maxFundable : 1000;
           }
           updateAssetDisplay();
         });
