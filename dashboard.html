@@ -2170,7 +2170,8 @@
     <script>
       
 
-    window.__QARDHASANA_WIDGET_DATA__ = {"host":{"displayName":"Ibrahim","stripeAccountId":"acct_1SQpjyGtDGEo1d3b","stripeVerified":true,"widgetColor":"#15803d"},"assets":[{"id":5,"title":"Sample","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":25},{"id":7,"title":"Leap 2027","shortDescription":null,"fundGoal":4000,"repaymentCapableAmount":4000,"currentAmountRaised":50},{"id":10,"title":"Qard Al Hasan","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":0},{"id":15,"title":"My New Asset","shortDescription":null,"fundGoal":10000,"repaymentCapableAmount":1000,"currentAmountRaised":1000},{"id":34,"title":"My Asset","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":0,"currentAmountRaised":0},{"id":35,"title":"My Asset","shortDescription":null,"fundGoal":1001,"repaymentCapableAmount":1000,"currentAmountRaised":0}]};
+      // "acct_1SQpjyGtDGEo1d3b"
+    window.__QARDHASANA_WIDGET_DATA__ = {"host":{"displayName":"Ibrahim","stripeAccountId":null,"stripeVerified":false,"widgetColor":"#15803d"},"assets":[{"id":5,"title":"Sample","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":25},{"id":7,"title":"Leap 2027","shortDescription":null,"fundGoal":4000,"repaymentCapableAmount":4000,"currentAmountRaised":50},{"id":10,"title":"Qard Al Hasan","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":0},{"id":15,"title":"My New Asset","shortDescription":null,"fundGoal":10000,"repaymentCapableAmount":1000,"currentAmountRaised":1000},{"id":34,"title":"My Asset","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":0,"currentAmountRaised":0},{"id":35,"title":"My Asset","shortDescription":null,"fundGoal":1001,"repaymentCapableAmount":1000,"currentAmountRaised":0}]};
     
     (function () {
       "use strict";
@@ -3645,6 +3646,228 @@
                 font-size: 40px;
             }
         }
+
+        /* Stripe enable payouts - on Host */
+        .setup-container {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 480px;
+            animation: slideUp 0.4s ease-out;
+            overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .setup-content {
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        /* Icon with animated border */
+        .setup-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 28px;
+            position: relative;
+        }
+
+        .setup-icon-bg {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f0faf7 0%, #dcfce7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .setup-icon-bg::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #267357, #2d8a67, #267357);
+            opacity: 0.3;
+            animation: rotate 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .setup-icon-bg svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        /* Text Content */
+        .setup-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .setup-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            color: #267357
+        }
+
+        /* Button */
+        .setup-button {
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(38, 115, 87, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .setup-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(38, 115, 87, 0.3);
+        }
+
+        .setup-button:active {
+            transform: translateY(0);
+        }
+
+        .setup-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Steps indicator */
+        .steps-container {
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 28px;
+        }
+
+        .steps-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .setup-content {
+                padding: 40px 24px;
+            }
+
+            .setup-title {
+                font-size: 22px;
+            }
+
+            .setup-footer {
+                padding: 20px 24px 24px;
+            }
+        }
+      
+      /* Footer */
+        .setup-footer {
+            padding: 20px 32px 32px;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .footer-link {
+            color: #267357;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
       `.replace(/#15803d/g, hostColor);
     
       const styleSheet = document.createElement("style");
@@ -4134,11 +4357,72 @@
                 <span>Close</span>
               </button>
             </div>
+
+            <!-- Screen 5: Host has not enabled payouts -->
+            <div class="screen " id="host-setup-screen">
+              <div class="setup-container">
+                <div class="setup-content">
+                    <!-- Icon --> 
+                    <div class="setup-icon-wrapper">
+                        <div class="setup-icon-bg">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <h1 class="setup-title">Setup Required</h1>
+                    <p class="setup-description">
+                        This contribution widget is ready to go, but payout setup needs to be completed before accepting contributions.
+                    </p>
+
+                    <!-- Info Box for Host -->
+                    <div class="info-box">
+                        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4M12 8h.01"/>
+                        </svg>
+                        <p class="info-text">
+                            <strong>If you're the host</strong>, click below to complete your payout account setup.
+                        </p>
+                    </div>
+
+                    <!-- Quick Steps -->
+                    <div class="steps-container">
+                        <div class="steps-title">Quick Setup Steps:</div>
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-text">Connect your bank account or payment method</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-text">Verify your identity (required by regulations)</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-text">Start accepting contributions immediately</div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <a href="https://qardhasana.com/dashboard" class="setup-button">
+                        <span>Go to Dashboard</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+              </div>
+            </div>
     
             <div class='powered-by'>
               Powered by <a href='https://qardhasana.com' target='_blank'>QardHasana</a>
             </div>
-          </div>`;
+          </div>
+          
+          `;
     
         document.body.appendChild(modalOverlay);
     
@@ -4839,6 +5123,11 @@
           document.body.style.overflow = 'hidden';
           
           initializeWidget();
+
+          // Check if host stripe payouts setup
+          if (!(widgetData.host.stripeAccountId) && !widgetData.host.stripeVerified) {
+            showScreen('host-setup-screen');
+          }
         }
     
         function closeModal() {
