@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Qard Hasan Loan Agreement</title>
+
+<style>
+  @page {
+    size: A4;
+    margin: 48px;
+  }
+
+  body {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    color: #1f2933;
+    line-height: 1.6;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: #267357;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    color: #267357;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 12px;
+  }
+
+  .divider {
+    height: 2px;
+    background-color: #267357;
+    opacity: 0.15;
+    margin: 24px 0;
+  }
+
+  p {
+    font-size: 14.5px;
+    margin: 0 0 14px 0;
+  }
+
+  .meta {
+    font-size: 13px;
+    color: #4b5563;
+  }
+
+  .party-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+  }
+
+  .party-box {
+    width: 48%;
+    padding: 14px 16px;
+    border-left: 3px solid #267357;
+    background: #f9fbfa;
+  }
+
+  .label {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #267357;
+    margin-bottom: 6px;
+  }
+
+  .value {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .declaration {
+    background: #f9fbfa;
+    padding: 20px 22px;
+    border-left: 4px solid #267357;
+    margin-top: 28px;
+  }
+
+  .quran-section {
+    margin-top: 44px;
+  }
+
+  .arabic {
+    font-family: "Amiri", "Scheherazade", serif;
+    font-size: 20px;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 18px;
+  }
+
+  .translation {
+    font-size: 14px;
+    color: #374151;
+    font-style: italic;
+  }
+
+  .footer {
+    margin-top: 56px;
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+  }
+
+  a:link {
+    color: #267357;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #267357;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div style="
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        ">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#267357"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"/>
+        </svg>
+
+        <div class="titleDiv">
+            <h1 style="margin: 0;"><span style="color: black">Qard</span>Hasana</h1>
+            <h2 style="margin: 0; font-size: 0.95rem; font-weight: 400; opacity: 0.7;">
+            Loan Agreement
+            </h2>
+        </div>
+    </div>
+
+
+    <p class="meta">
+      A benevolent, interest-free loan agreement established in trust,
+      responsibility, and accordance with Islamic principles.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2>Parties Involved</h2>
+
+    <div class="party-section">
+      <div class="party-box">
+        <div class="label">Borrower Name</div>
+        <div class="value">{{Borrower Name}}</div>
+      </div>
+
+      <div class="party-box">
+        <div class="label">Lender Name</div>
+        <div class="value">{{Lender Name}}</div>
+      </div>
+    </div>
+
+    <h2>Loan Declaration</h2>
+
+    <div class="declaration">
+      <p>
+        “I took this loan of <strong>$${input.totalAmount.toFixed(2)}</strong>
+        from <strong>${input.counterpartyName}</strong> on
+        <strong>${createdDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</strong>
+        and agreed to repay the full amount by
+        <strong>${lastMilestoneDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</strong>,
+        through partial repayments scheduled across
+        <strong>${numberOfMilestones}</strong> repayment dates.”
+      </p>
+    </div>
+
+    <div class="quran-section">
+      <h2>Quranic Guidance on Debt</h2>
+
+      <div class="arabic">
+        يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِذَا تَدَايَنتُم بِدَيْنٍ إِلَىٰٓ أَجَلٍۢ مُّسَمًّۭى
+        فَٱكْتُبُوهُ ۚ وَلْيَكْتُب بَّيْنَكُمْ كَاتِبٌۢ بِٱلْعَدْلِ ۚ
+        وَلَا يَأْبَ كَاتِبٌ أَن يَكْتُبَ كَمَا عَلَّمَهُ ٱللَّهُ ۚ
+        فَلْيَكْتُبْ وَلْيُمْلِلِ ٱلَّذِى عَلَيْهِ ٱلْحَقُّ...
+      </div>
+
+      <div class="translation">
+        “O you who have believed, when you contract a debt for a specified term,
+        write it down. And let a scribe write it between you in justice.
+        Let no scribe refuse to write as Allah has taught him.
+        So let him write, and let the one who has the obligation dictate…”
+        <br><br>
+        <a href="https://quran.com/al-baqarah/282">— Quran 2:282</a>
+      </div>
+    </div>
+
+    <!-- <div class="footer">
+        This agreement is recorded and maintained on QardHasana
+        under Reference No. <strong>QH-{{referenceNumber}}</strong>.
+        Any copy of this document without a matching platform record
+        should not be considered authentic.
+      </div> -->
+
+      <div class="footer">
+        This agreement reflects a trust-based obligation and moral responsibility
+        under Islamic law (Shariah) and is intended for formal acknowledgment and record-keeping.
+        It is officially recorded and maintained on <a href="https://qardhasana.com">QardHasana</a> under
+        Reference No. <strong>QH-{{loanNumber}}</strong>
+      </div>
+      
+
+  </div>
+</body>
+</html>
