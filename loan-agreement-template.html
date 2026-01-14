@@ -18,9 +18,10 @@
   }
 
   .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 80px; /* reserve space for footer */
+}
 
   h1 {
     color: #267357;
@@ -107,6 +108,17 @@
 
   .footer {
     margin-top: 56px;
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+  }
+
+  .footer {
+    /* position: fixed; */
+    bottom: 48px; /* MUST match @page bottom margin */
+    left: 48px;
+    right: 48px;
+
     font-size: 12px;
     color: #6b7280;
     text-align: center;
@@ -215,6 +227,7 @@
         Any copy of this document without a matching platform record
         should not be considered authentic.
       </div> -->
+      <div style="height: 300px"></div>
 
       <div class="footer">
         This agreement reflects a trust-based obligation and moral responsibility
