@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root {
+  --primary-green: #10b981;
+  --accent-mint: #5eead4;
+  --overlay-dark: rgba(6, 78, 59, 0.75); /* emerald-900-ish */
+  --text-light: #ffffff;
+  --text-muted-light: rgba(255, 255, 255, 0.85);
+}
+
+.hero-overlayed {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("green-background.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 6vw;
+}
+
+/* Gradient overlay */
+.hero-overlayed::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--overlay-dark) 0%,
+    rgba(6, 78, 59, 0.45) 40%,
+    rgba(6, 78, 59, 0.15) 70%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.hero-title {
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.hero-title-main {
+  display: block;
+  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  font-weight: 800;
+  color: var(--text-light);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-title-accent {
+  display: block;
+  font-size: clamp(2.5rem, 4vw, 3.25rem);
+  font-weight: 800;
+  color: var(--accent-mint);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtitle {
+  margin: 1.25rem 0 2.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted-light);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Buttons */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--primary-green);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-overlayed {
+    padding: 0 1.5rem;
+  }
+}
+
+    </style>
+
+</head>
+<body>
+    <section class="hero hero-overlayed">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-title-main">Empowering dreams,</span>
+            <span class="hero-title-accent">The Halal Way.</span>
+          </h1>
+      
+          <p class="hero-subtitle">
+            Interest-free support for founders and projects built on trust,
+            transparency, and responsibility.
+          </p>
+      
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Explore Projects</a>
+            <a href="#" class="btn btn-outline">How it works</a>
+          </div>
+        </div>
+      </section>
+      
+      
+</body>
+</html>

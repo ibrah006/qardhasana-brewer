@@ -2169,8 +2169,7 @@
       
     <script>
       
-
-    window.__QARDHASANA_WIDGET_DATA__ = {"host":{"displayName":"Ibrahim","stripeAccountId":"acct_1SQpjyGtDGEo1d3b","stripeVerified":true,"widgetColor":"#15803d"},"assets":[{"id":5,"title":"Sample","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":25},{"id":7,"title":"Leap 2027","shortDescription":null,"fundGoal":4000,"repaymentCapableAmount":4000,"currentAmountRaised":50},{"id":10,"title":"Qard Al Hasan","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":50,"currentAmountRaised":0},{"id":15,"title":"My New Asset","shortDescription":null,"fundGoal":10000,"repaymentCapableAmount":1000,"currentAmountRaised":1000},{"id":34,"title":"My Asset","shortDescription":null,"fundGoal":100,"repaymentCapableAmount":0,"currentAmountRaised":0},{"id":35,"title":"My Asset","shortDescription":null,"fundGoal":1001,"repaymentCapableAmount":1000,"currentAmountRaised":0}]};
+    window.__QARDHASANA_WIDGET_DATA__ = {"host":{"displayName":"Ibrahim MN","stripeAccountId":"acct_1SRekQ2eBTC9xFML","stripeVerified":true,"widgetColor":"#15803d"},"admirationScore":{"overallScore":null,"npsScore":null,"trustScore":null,"uniquenessScore":null,"totalResponses":0},"assets":[{"id":41,"title":"My Equipment","shortDescription":null,"fundGoal":10000,"repaymentCapableAmount":10000,"currentAmountRaised":7230}]};
     
     (function () {
       "use strict";
@@ -2184,1278 +2183,1758 @@
       }
     
       // Store hostIdentifier for backend requests
-      widgetData.hostIdentifier = '7';
+      widgetData.hostIdentifier = '11';
     
       // Extract host color or use default
       const hostColor = widgetData.host.widgetColor || '#15803d';
     
       // --- START: CSS for the widget ---
       const css = `
-        /* Trigger Button Styles */
-        #qardhasana-trigger-button {
-          all: initial;
-          position: fixed;
-          bottom: 24px;
-          right: 24px;
-          z-index: 999999;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
+      
+      /* Trigger Button Styles */
+      #qardhasana-trigger-button {
+        all: initial;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999999;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
     
-        #qardhasana-trigger-button button {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          padding: 16px 28px;
-          background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
-          color: white;
-          border: none;
-          border-radius: 50px;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          box-shadow: 0 8px 32px rgba(38, 115, 87, 0.3), 0 0 0 0 rgba(38, 115, 87, 0.4);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          font-family: inherit;
-          animation: pulse-shadow 2s infinite;
-        }
+      #qardhasana-trigger-button button {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 28px;
+        background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 8px 32px rgba(38, 115, 87, 0.3), 0 0 0 0 rgba(38, 115, 87, 0.4);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: inherit;
+        animation: pulse-shadow 2s infinite;
+      }
     
-        @keyframes pulse-shadow {
-          0%, 100% {
-            box-shadow: 0 8px 32px rgba(21, 128, 61, 0.3), 0 0 0 0 rgba(21, 128, 61, 0.4);
-          }
-          50% {
-            box-shadow: 0 8px 32px rgba(21, 128, 61, 0.4), 0 0 0 8px rgba(21, 128, 61, 0);
-          }
+      @keyframes pulse-shadow {
+        0%, 100% {
+          box-shadow: 0 8px 32px rgba(21, 128, 61, 0.3), 0 0 0 0 rgba(21, 128, 61, 0.4);
         }
-    
-        #qardhasana-trigger-button button:hover {
-          transform: translateY(-3px) scale(1.02);
-          box-shadow: 0 12px 40px rgba(38, 115, 87, 0.4);
-          background: linear-gradient(135deg, #1d5642 0%, #267357 100%);
+        50% {
+          box-shadow: 0 8px 32px rgba(21, 128, 61, 0.4), 0 0 0 8px rgba(21, 128, 61, 0);
         }
+      }
     
-        #qardhasana-trigger-button button:active {
-          transform: translateY(-1px) scale(1);
-        }
+      #qardhasana-trigger-button button:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(38, 115, 87, 0.4);
+        background: linear-gradient(135deg, #1d5642 0%, #267357 100%);
+      }
     
-        #qardhasana-trigger-button svg {
-          animation: heartbeat 1.5s ease-in-out infinite;
-        }
+      #qardhasana-trigger-button button:active {
+        transform: translateY(-1px) scale(1);
+      }
     
-        @keyframes heartbeat {
-          0%, 100% { transform: scale(1); }
-          10%, 30% { transform: scale(1.15); }
-          20%, 40% { transform: scale(1); }
-        }
+      #qardhasana-trigger-button svg {
+        animation: heartbeat 1.5s ease-in-out infinite;
+      }
     
-        /* Modal Overlay */
-        #qardhasana-modal-overlay {
-          all: initial;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: rgba(0, 0, 0, 0.7);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
-          z-index: 1000000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+      @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        10%, 30% { transform: scale(1.15); }
+        20%, 40% { transform: scale(1); }
+      }
+    
+      /* Modal Overlay */
+      #qardhasana-modal-overlay {
+        all: initial;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 1000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        padding: 20px;
+      }
+    
+      #qardhasana-modal-overlay.show {
+        opacity: 1;
+      }
+    
+      /* Modal Container */
+      #qardhasana-widget-container {
+        padding: 32px;
+        background: white;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: slideUp 0.3s ease-out;
+      }
+    
+      #qardhasana-widget-container * {
+        box-sizing: border-box;
+      }
+    
+      #qardhasana-modal-overlay.show #qardhasana-widget-container {
+        transform: scale(1) translateY(0);
+      }
+    
+      @keyframes slideUp {
+        from {
           opacity: 0;
-          transition: opacity 0.3s ease;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          padding: 20px;
+          transform: translateY(30px);
         }
-    
-        #qardhasana-modal-overlay.show {
+        to {
           opacity: 1;
+          transform: translateY(0);
         }
+      }
     
-        /* Modal Container */
+      /* Close Button */
+      .close-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        padding: 0;
+      }
+    
+      .close-button:hover {
+        background: rgba(0, 0, 0, 0.1);
+        transform: rotate(90deg);
+      }
+    
+      .close-button svg {
+        width: 20px;
+        height: 20px;
+        stroke: #6b7280;
+      }
+    
+      /* Header */
+      .widget-header {
+        padding: 5px 0px 24px;
+        border-bottom: 1px solid #f0f0f0;
+        margin-left: 18px;
+      }
+    
+      .widget-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+      }
+    
+      .widget-subtitle {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5;
+      }
+    
+      /* Screen visibility */
+      .screen {
+        display: none;
+      }
+    
+      .screen.active {
+        display: block;
+      }
+    
+      /* Powered By */
+      .powered-by {
+        margin-top: 24px;
+        font-size: 12px;
+        color: #94a3b8;
+        text-align: center;
+      }
+    
+      .powered-by a {
+        color: #267357;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    
+      .powered-by a:hover {
+        text-decoration: underline;
+      }
+    
+      /* Admiration Score Section */
+      .admiration-score-section {
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
+        border: 1px solid #e0f2ed;
+        border-radius: 12px;
+        margin-bottom: 24px;
+        position: relative;
+      }
+    
+      .admiration-badge-container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+    
+      .admiration-badge {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border: 3px solid #6b7280;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+      }
+    
+      .admiration-badge:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    
+      .admiration-badge.score-excellent {
+        border-color: #22c55e;
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      }
+    
+      .admiration-badge.score-good {
+        border-color: #3b82f6;
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      }
+    
+      .admiration-badge.score-fair {
+        border-color: #eab308;
+        background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+      }
+    
+      .admiration-badge.score-low {
+        border-color: #6b7280;
+        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      }
+    
+      .admiration-badge.score-new {
+        border-color: #6b7280;
+        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      }
+    
+      .admiration-score-value {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+    
+      .admiration-badge.score-excellent .admiration-score-value {
+        color: #22c55e;
+      }
+    
+      .admiration-badge.score-good .admiration-score-value {
+        color: #3b82f6;
+      }
+    
+      .admiration-badge.score-fair .admiration-score-value {
+        color: #eab308;
+      }
+    
+      .admiration-badge.score-low .admiration-score-value,
+      .admiration-badge.score-new .admiration-score-value {
+        color: #6b7280;
+      }
+    
+      .admiration-score-label {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #666;
+      }
+    
+      .admiration-responses {
+        font-size: 13px;
+        color: #666;
+        line-height: 1.5;
+      }
+    
+      /* Tooltip */
+      .admiration-tooltip {
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        margin-top: 8px;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        min-width: 240px;
+        display: none;
+      }
+    
+      .admiration-tooltip.show {
+        display: block;
+        animation: tooltipFadeIn 0.2s ease-out;
+      }
+    
+      @keyframes tooltipFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+      .admiration-tooltip-arrow {
+        position: absolute;
+        top: -6px;
+        left: 30px;
+        width: 12px;
+        height: 12px;
+        background: white;
+        border-left: 1px solid #e5e7eb;
+        border-top: 1px solid #e5e7eb;
+        transform: rotate(45deg);
+      }
+    
+      .admiration-tooltip-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+      }
+    
+      .admiration-breakdown-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        border-bottom: 1px solid #f3f4f6;
+      }
+    
+      .admiration-breakdown-item:last-child {
+        border-bottom: none;
+      }
+    
+      .breakdown-label {
+        font-size: 13px;
+        color: #666;
+        font-weight: 500;
+      }
+    
+      .breakdown-value {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+    
+      /* Mobile Responsiveness */
+      @media (max-width: 640px) {
         #qardhasana-widget-container {
-          padding: 32px;
-          background: white;
-          border-radius: 20px;
-          width: 100%;
-          max-width: 500px;
-          max-height: 90vh;
-          overflow-y: auto;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-          animation: slideUp 0.3s ease-out;
-        }
-    
-        #qardhasana-widget-container * {
-          box-sizing: border-box;
-        }
-    
-        #qardhasana-modal-overlay.show #qardhasana-widget-container {
-          transform: scale(1) translateY(0);
-        }
-    
-        /* Close Button */
-        .close-button {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          width: 36px;
-          height: 36px;
-          border: none;
-          background: rgba(0, 0, 0, 0.05);
-          border-radius: 50%;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.2s;
-          padding: 0;
-        }
-    
-        .close-button:hover {
-          background: rgba(0, 0, 0, 0.1);
-          transform: rotate(90deg);
-        }
-    
-        .close-button svg {
-          width: 20px;
-          height: 20px;
-          stroke: #6b7280;
-        }
-    
-        /* Header */
-        .widget-header {
-          padding: 5px 0px 24px;
-          border-bottom: 1px solid #f0f0f0;
+          padding: 24px;
         }
     
         .widget-title {
           font-size: 24px;
-          font-weight: 700;
-          color: #1a1a1a;
-          margin-bottom: 8px;
         }
     
-        .widget-subtitle {
-          font-size: 14px;
-            color: #666;
-            line-height: 1.5;
+        .admiration-badge {
+          width: 70px;
+          height: 70px;
         }
     
-        /* Authentication Section */
-        .auth-section {
-          margin-bottom: 24px;
-        }
-    
-        .sign-in-prompt {
-          display: flex;
-          align-items: center;
-          background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
-          border: 1px solid #e0f2ed;
-          border-radius: 12px;
-          padding: 16px;
-          margin-bottom: 24px;
-          justify-content: center;
-          gap: 10px
-        }
-    
-        .sign-in-prompt svg {
-          flex-shrink: 0;
-        }
-    
-        .sign-in-link {
-          background: transparent;
-          border: none;
-          color: #267357;
-          font-weight: 600;
-          cursor: pointer;
-          text-decoration: underline;
-          padding: 0;
-          font-size: 14px;
-          font-family: inherit;
-        }
-    
-        .sign-in-link:hover {
-          color: #166534;
-        }
-    
-        .auth-form {
-          background: rgba(255, 255, 255, 0.7);
-          border: 1px solid rgba(21, 128, 61, 0.1);
-          border-radius: 16px;
-          padding: 20px;
-          text-align: left;
-        }
-    
-        .auth-form-header {
-          margin-bottom: 16px;
-        }
-    
-        .auth-form-header h3 {
-          font-size: 18px;
-          font-weight: 700;
-          margin: 0 0 6px;
-          color: #0f172a;
-        }
-    
-        .auth-form-header p {
-          font-size: 14px;
-          color: #64748b;
-          margin: 0;
-          line-height: 1.5;
-        }
-    
-        .otp-input {
+        .admiration-score-value {
           font-size: 24px;
-          letter-spacing: 8px;
-          text-align: center;
-          font-weight: 600;
-          font-family: 'Monaco', 'Courier New', monospace;
         }
     
-        .auth-error {
-          background: #fee2e2;
-          border: 1px solid #fca5a5;
-          border-radius: 8px;
-          padding: 10px 12px;
-          color: #dc2626;
-          font-size: 13px;
-          margin-bottom: 12px;
-          line-height: 1.4;
+        .admiration-tooltip {
+          left: 10px;
+          right: 10px;
+          min-width: auto;
         }
+      }
     
-        .auth-success {
-          background: #dcfce7;
-          border: 1px solid #86efac;
-          border-radius: 8px;
-          padding: 10px 12px;
-          color: #16a34a;
-          font-size: 13px;
-          margin-bottom: 12px;
-          line-height: 1.4;
-        }
+      
+      /* Authentication Section */
+      .auth-section {
+        margin-bottom: 24px;
+      }
     
-        .auth-form-buttons {
-          display: flex;
-          gap: 8px;
-          margin-top: 16px;
-        }
+      .sign-in-prompt {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
+        border: 1px solid #e0f2ed;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 24px;
+        justify-content: center;
+        gap: 10px;
+      }
     
-        .auth-submit-btn {
-          flex: 1;
-          background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
-          color: white;
-          padding: 12px 20px;
-          border: none;
-          border-radius: 30px;
-          font-size: 15px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-family: inherit;
-        }
+      .sign-in-prompt svg {
+        flex-shrink: 0;
+      }
     
-        .auth-submit-btn:hover:not(:disabled) {
-          transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
-        }
+      .sign-in-link {
+        background: transparent;
+        border: none;
+        color: #267357;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: underline;
+        padding: 0;
+        font-size: 14px;
+        font-family: inherit;
+      }
     
-        .auth-submit-btn:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
+      .sign-in-link:hover {
+        color: #166534;
+      }
     
-        .auth-cancel-btn {
-          background: transparent;
-          color: #64748b;
-          padding: 12px 20px;
-          border: 2px solid #e2e8f0;
-          border-radius: 30px;
-          font-size: 15px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-family: inherit;
-        }
+      .auth-form {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(21, 128, 61, 0.1);
+        border-radius: 16px;
+        padding: 20px;
+        text-align: left;
+      }
     
-        .auth-cancel-btn:hover {
-          border-color: #cbd5e1;
-          color: #475569;
-        }
+      .auth-form-header {
+        margin-bottom: 16px;
+      }
     
-        .resend-link {
-          background: transparent;
-          border: none;
-          color: #267357;
-          font-size: 13px;
-          font-weight: 600;
-          cursor: pointer;
-          text-decoration: underline;
-          padding: 8px 0 0;
-          margin-top: 8px;
-          font-family: inherit;
-          text-align: center;
-          width: 100%;
-        }
+      .auth-form-header h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        color: #0f172a;
+      }
     
-        .resend-link:hover {
-          color: #166534;
-        }
+      .auth-form-header p {
+        font-size: 14px;
+        color: #64748b;
+        margin: 0;
+        line-height: 1.5;
+      }
     
-        .resend-link:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
+      .otp-input {
+        font-size: 24px;
+        letter-spacing: 8px;
+        text-align: center;
+        font-weight: 600;
+        font-family: 'Monaco', 'Courier New', monospace;
+      }
     
+      .auth-error {
+        background: #fee2e2;
+        border: 1px solid #fca5a5;
+        border-radius: 8px;
+        padding: 10px 12px;
+        color: #dc2626;
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+    
+      .auth-success {
+        background: #dcfce7;
+        border: 1px solid #86efac;
+        border-radius: 8px;
+        padding: 10px 12px;
+        color: #16a34a;
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+    
+      .auth-form-buttons {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+      }
+    
+      .auth-submit-btn {
+        flex: 1;
+        background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+    
+      .auth-submit-btn:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+      }
+    
+      .auth-submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    
+      .auth-cancel-btn {
+        background: transparent;
+        color: #64748b;
+        padding: 12px 20px;
+        border: 2px solid #e2e8f0;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+    
+      .auth-cancel-btn:hover {
+        border-color: #cbd5e1;
+        color: #475569;
+      }
+    
+      .resend-link {
+        background: transparent;
+        border: none;
+        color: #267357;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: underline;
+        padding: 8px 0 0;
+        margin-top: 8px;
+        font-family: inherit;
+        text-align: center;
+        width: 100%;
+      }
+    
+      .resend-link:hover {
+        color: #166534;
+      }
+    
+      .resend-link:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    
+      .logged-in-state {
+        display: flex;
+        margin-top: 25px;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
+        border: 1px solid #e0f2ed;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 24px;
+      }
+    
+      .logged-in-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        color: #065f46;
+      }
+    
+      .logged-in-info svg {
+        flex-shrink: 0;
+      }
+    
+      .logged-in-info strong {
+        font-weight: 600;
+      }
+    
+      .sign-out-btn {
+        background: transparent;
+        border: 1px solid #267357;
+        color: #267357;
+        padding: 6px 16px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+    
+      .sign-out-btn:hover {
+        background: rgba(21, 128, 61, 0.1);
+        border-color: #267357;
+      }
+    
+      @media (max-width: 640px) {
         .logged-in-state {
-          display: flex;
-          margin-top: 25px;
-          align-items: center;
-          justify-content: space-between;
-          background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
-          border: 1px solid #e0f2ed;
-          border-radius: 12px;
-          padding: 16px;
-          margin-bottom: 24px;
-        }
-    
-        .logged-in-info {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 14px;
-          color: #065f46;
-        }
-    
-        .logged-in-info svg {
-          flex-shrink: 0;
-        }
-    
-        .logged-in-info strong {
-          font-weight: 600;
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-start;
         }
     
         .sign-out-btn {
-          background: transparent;
-          border: 1px solid #267357;
-          color: #267357;
-          padding: 6px 16px;
-          border-radius: 8px;
-          font-size: 13px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-family: inherit;
-        }
-    
-        .sign-out-btn:hover {
-          background: rgba(21, 128, 61, 0.1);
-          border-color: #15803d;
-        }
-    
-        /* Verification Screen */
-        .verification-icon {
-          width: 80px;
-          height: 80px;
-          margin: 0 auto 24px;
-          border-radius: 50%;
-          background: #dbeafe;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-    
-        .verification-title {
-          font-size: 24px;
-          font-weight: 700;
-          margin: 0 0 12px;
-          color: #0f172a;
-        }
-    
-        .verification-message {
-          font-size: 16px;
-          color: #64748b;
-          margin: 0 0 24px;
-          line-height: 1.6;
-        }
-    
-        .dashboard-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 14px 24px;
-          background: #3b82f6;
-          color: white;
-          border-radius: 12px;
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 16px;
-          transition: all 0.2s;
-          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
-    
-        .dashboard-link:hover {
-          background: #2563eb;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-        }
-    
-        /* Asset Selector */
-        .asset-selector-section {
-          margin-bottom: 20px;
-          text-align: left;
-        }
-    
-        .asset-select {
           width: 100%;
-          padding: 14px 16px;
-          border: 2px solid #e5e5e5;
-          border-radius: 30px;
-          font-size: 15px;
-          color: #333;
-          background: white;
-          cursor: pointer;
-          appearance: none;
-          background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-          background-repeat: no-repeat;
-          background-position: right 16px center;
-          padding-right: 45px;
-          transition: all 0.2s ease;
         }
+      }
     
-        .asset-select:focus {
-          outline: none;
-          border-color: #15803d;
-          box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);
-        }
+      
+      /* Action Tabs */
+      .action-tabs {
+        display: flex;
+        gap: 8px;
+        background: #f8f8f8;
+        padding: 4px;
+        border-radius: 30px;
+        margin-bottom: 24px;
+      }
     
-        /* Asset Description */
-        .asset-description {
-          background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
-          border: 1px solid #e0f2ed;
-          border-radius: 12px;
-          padding: 16px;
-          margin-bottom: 24px;
-          font-size: 14px;
-          color: #555;
-          line-height: 1.6;
-        }
+      .tab-button {
+        flex: 1;
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        border-radius: 30px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #666;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
     
-        /* Progress Section */
-        .progress-section {
-          background: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          // border: 1px solid rgba(21, 128, 61, 0.1);
-          border-radius: 16px;
-          margin-bottom: 24px;
-        }
+      .tab-button.active {
+        background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+        color: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
     
+      .tab-button:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.5);
+      }
+    
+      .tab-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    
+      /* Asset Selector */
+      .asset-selector-section {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+    
+      .asset-select {
+        width: 100%;
+        padding: 14px 16px;
+        border: 2px solid #e5e5e5;
+        border-radius: 30px;
+        font-size: 15px;
+        color: #333;
+        background: white;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        padding-right: 45px;
+        transition: all 0.2s ease;
+      }
+    
+      .asset-select:focus {
+        outline: none;
+        border-color: #267357;
+        box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.1);
+      }
+    
+      /* Asset Description */
+      .asset-description {
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
+        border: 1px solid #e0f2ed;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 24px;
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+    
+      /* Progress Section */
+      .progress-section {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 16px;
+        margin-bottom: 24px;
+      }
+    
+      .progress-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-size: 0.85rem;
+      }
+    
+      .stat {
+        display: flex;
+        flex-direction: row;
+      }
+    
+      .stat-label {
+        font-size: 12px;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        margin-left: 2px;
+        margin-top: 4px;
+        vertical-align: baseline;
+        display: inline-block;
+      }
+    
+      .stat-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: #267357;
+      }
+    
+      .stat-value.secondary {
+        color: #0f172a;
+      }
+    
+      /* Progress Bar */
+      .progress-bar-container {
+        height: 6px;
+        background: #e9ecef;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+    
+      .progress-bar-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #267357, #32a583);
+        border-radius: 3px;
+        transition: width 0.5s ease;
+      }
+    
+      .progress-bar-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shimmer 2s infinite;
+      }
+    
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+    
+      /* Form */
+      .donation-form {
+        text-align: left;
+      }
+    
+      .form-group {
+        margin-bottom: 20px;
+      }
+    
+      .form-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+      }
+    
+      .form-input {
+        width: 100%;
+        padding: 14px 16px 14px 40px;
+        border: 2px solid #e5e5e5;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        transition: all 0.2s ease;
+      }
+    
+      .form-input:focus {
+        outline: none;
+        border-color: #267357;
+        box-shadow: 0 0 0 3px rgba(38, 115, 87, 0.1);
+      }
+    
+      .form-input::placeholder {
+        color: #999;
+        font-weight: 500;
+      }
+    
+      .amount-input-wrapper {
+        position: relative;
+      }
+    
+      .currency-symbol {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+      }
+    
+      .amount-suggestions {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        margin-bottom: 24px;
+        margin-top: 15px;
+      }
+    
+      .amount-chip {
+        padding: 10px;
+        border: 2px solid #e5e5e5;
+        border-radius: 30px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        color: #333;
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+    
+      .amount-chip.selected {
+        border-color: #267357;
+        background: #267357;
+        color: white;
+      }
+    
+      .amount-chip:hover {
+        border-color: #267357;
+        background: #267357;
+        color: white;
+      }
+    
+      /* Info Box */
+      .info-box {
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
+        border: 1px solid #e0f2ed;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 24px;
+      }
+    
+      .info-box svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: #267357;
+      }
+    
+      .info-box-text {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+    
+      .optional-label {
+        font-size: 12px;
+        color: #999;
+        margin-left: 4px;
+      }
+    
+      /* Checkbox */
+      .checkbox-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 24px;
+        padding: 16px;
+        background: #fafafa;
+        border-radius: 12px;
+      }
+    
+      .checkbox-input {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #e5e5e5;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: white;
+      }
+    
+      .checkbox-label {
+        font-size: 13px;
+        color: #475569;
+        line-height: 1.5;
+        cursor: pointer;
+        text-align: left;
+      }
+    
+      /* Submit Button */
+      .submit-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(38, 115, 87, 0.2);
+      }
+    
+      .submit-button:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(21, 128, 61, 0.4);
+      }
+    
+      .submit-button:active:not(:disabled) {
+        transform: translateY(0);
+      }
+    
+      .submit-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+    
+      /* Back Button */
+      .back-button {
+        width: 100%;
+        background: transparent;
+        color: #64748b;
+        padding: 12px;
+        border: 2px solid #e2e8f0;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-family: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+    
+      .back-button:hover {
+        border-color: #267357;
+        color: #267357;
+      }
+    
+      /* Payment Screen */
+      .payment-screen {
+        display: none;
+      }
+    
+      .payment-screen.active {
+        display: block;
+      }
+    
+      #stripe-payment-element {
+        margin-bottom: 20px;
+      }
+    
+      .payment-error {
+        color: #dc2626;
+        font-size: 14px;
+        margin-top: 12px;
+        text-align: center;
+      }
+    
+      @media (max-width: 640px) {
         .progress-stats {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 8px;
-          font-size: 0.85rem;
-        }
-    
-        .stat {
-          display: flex;
-          flex-direction: row;
-        }
-    
-        .stat-label {
-          font-size: 12px;
-          color: #64748b;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          font-weight: 600;
-          margin-bottom: 4px;
-          margin-left: 2px;
-          margin-top: 4px;
-          vertical-align: baseline;
-          display: inline-block;
+          flex-direction: column;
+          gap: 12px;
         }
     
         .stat-value {
-          font-size: 24px;
-          font-weight: 700;
-          color: #267357;
+          font-size: 20px;
+        }
+      }
+    
+      
+      /* Verification Screen */
+      .verification-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        background: #dbeafe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .verification-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 12px;
+        color: #0f172a;
+      }
+    
+      .verification-message {
+        font-size: 16px;
+        color: #64748b;
+        margin: 0 0 24px;
+        line-height: 1.6;
+      }
+    
+      .dashboard-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 24px;
+        background: #3b82f6;
+        color: white;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        transition: all 0.2s;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+    
+      .dashboard-link:hover {
+        background: #2563eb;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+      }
+    
+      /* Success/Error Screens */
+      .result-screen {
+        display: none;
+        text-align: center;
+      }
+    
+      .result-screen.active {
+        display: block;
+      }
+    
+      .result-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .result-icon.success {
+        background: #dcfce7;
+      }
+    
+      .result-icon.error {
+        background: #fee2e2;
+      }
+    
+      .result-icon svg {
+        width: 48px;
+        height: 48px;
+      }
+    
+      .result-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 12px;
+        color: #0f172a;
+      }
+    
+      .result-message {
+        font-size: 16px;
+        color: #64748b;
+        margin: 0 0 24px;
+        line-height: 1.5;
+      }
+    
+      /* Success Screen Detailed Styling */
+      .success-header {
+        padding: 40px 32px 32px;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+      }
+    
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f0faf7 0%, #dcfce7 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: scaleIn 0.5s ease-out 0.2s both;
+      }
+    
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+    
+      .success-icon svg {
+        width: 48px;
+        height: 48px;
+      }
+    
+      .success-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+      }
+    
+      .success-subtitle {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+    
+      /* Content Section */
+      .success-content {
+        padding: 32px;
+      }
+    
+      /* Loan/Support Details Cards */
+      .loan-details-card,
+      .support-details-card {
+        background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
+        border: 1px solid #e0f2ed;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+    
+      .loan-amount-section,
+      .support-amount-section {
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #e0f2ed;
+      }
+    
+      .loan-amount-label,
+      .support-amount-label {
+        font-size: 13px;
+        color: #666;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+    
+      .success-loan-amount-value {
+        font-size: 42px;
+        font-weight: 700;
+        color: #267357;
+        line-height: 1;
+      }
+    
+      .support-amount-value {
+        font-size: 48px;
+        font-weight: 700;
+        color: #267357;
+        line-height: 1;
+      }
+    
+      .loan-term {
+        font-size: 14px;
+        color: #555;
+        margin-top: 8px;
+      }
+    
+      .loan-info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    
+      .loan-info-item {
+        text-align: center;
+      }
+    
+      .loan-info-label {
+        font-size: 12px;
+        color: #666;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+      }
+    
+      .loan-info-value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+    
+      .startup-info {
+        margin-bottom: 20px;
+      }
+    
+      .startup-label {
+        font-size: 12px;
+        color: #666;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+      }
+    
+      .startup-name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+    
+      .impact-highlight {
+        background: white;
+        border-radius: 10px;
+        padding: 16px;
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+    
+      /* Notice/Info Boxes */
+      .notice-box,
+      .nature-box {
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+        gap: 16px;
+      }
+    
+      .notice-box {
+        background: #fff9e6;
+        border: 2px solid #ffd666;
+      }
+    
+      .nature-box {
+        background: #edfaf5;
+        border: 2px solid #8fc7b2;
+      }
+    
+      .notice-icon,
+      .nature-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+      }
+    
+      .nature-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+    
+      .nature-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+    
+      .notice-content h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+      }
+    
+      .notice-list,
+      .nature-list {
+        list-style: none;
+        padding: 0;
+      }
+    
+      .notice-list li,
+      .nature-list li {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 8px;
+      }
+    
+      .notice-list li:last-child,
+      .nature-list li:last-child {
+        margin-bottom: 0;
+      }
+    
+      .notice-list li::before {
+        content: '•';
+        position: absolute;
+        left: 6px;
+        color: #ffa940;
+        font-weight: 700;
+      }
+    
+      .nature-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 2px;
+        color: #267357;
+        font-weight: 700;
+        font-size: 16px;
+      }
+    
+      /* Education/Funds Sections */
+      .education-box,
+      .funds-section {
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+      }
+    
+      .education-box {
+        background: #fafafa;
+        border: 1px solid #e5e5e5;
+      }
+    
+      .funds-section {
+        background: #fafafa;
+        border: 1px solid #e5e5e5;
+      }
+    
+      .education-header,
+      .funds-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+    
+      .education-icon,
+      .funds-icon {
+        width: 32px;
+        height: 32px;
+        background: #267357;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+    
+      .funds-icon {
+        width: 20px;
+        height: 20px;
+        background: transparent;
+      }
+    
+      .education-title,
+      .funds-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+    
+      .funds-title {
+        font-size: 16px;
+      }
+    
+      .education-list {
+        list-style: none;
+        padding: 0;
+      }
+    
+      .education-item {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 14px;
+        align-items: flex-start;
+      }
+    
+      .education-item:last-child {
+        margin-bottom: 0;
+      }
+    
+      .education-bullet {
+        width: 6px;
+        height: 6px;
+        background: #267357;
+        border-radius: 50%;
+        margin-top: 8px;
+        flex-shrink: 0;
+      }
+    
+      .education-text {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+    
+      .funds-description {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 12px;
+      }
+    
+      .funds-note {
+        font-size: 13px;
+        color: #666;
+        font-style: italic;
+        padding: 12px;
+        background: white;
+        border-radius: 8px;
+        border-left: 3px solid #267357;
+      }
+    
+      /* Repayment Section */
+      .repayment-section {
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+      }
+    
+      .repayment-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+    
+      .repayment-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+    
+      .repayment-badge {
+        background: #f0faf7;
+        color: #267357;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    
+      .repayment-info {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+      }
+    
+      /* Action Buttons */
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+    
+      .btn {
+        padding: 16px 24px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+    
+      .btn-primary {
+        background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+        color: white;
+        box-shadow: 0 4px 12px rgba(38, 115, 87, 0.2);
+      }
+    
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(38, 115, 87, 0.3);
+      }
+    
+      .btn-secondary {
+        background: white;
+        color: #267357;
+        border: 2px solid #e0f2ed;
+      }
+    
+      .btn-secondary:hover {
+        background: #f8fffe;
+        border-color: #267357;
+      }
+    
+      /* Footer */
+      .success-footer,
+      .setup-footer {
+        padding: 20px 32px 0px;
+        text-align: center;
+        border-top: 1px solid #f0f0f0;
+      }
+    
+      .footer-text {
+        font-size: 13px;
+        color: #999;
+        margin-bottom: 8px;
+      }
+    
+      .footer-link {
+        color: #267357;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    
+      .footer-link:hover {
+        text-decoration: underline;
+      }
+    
+      /* Host Setup Screen */
+      .setup-container {
+        background: white;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 480px;
+        overflow: hidden;
+      }
+    
+      .setup-content {
+        padding: 28px 20px;
+        text-align: center;
+      }
+    
+      .setup-icon-wrapper {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 28px;
+        position: relative;
+      }
+    
+      .setup-icon-bg {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #f0faf7 0%, #dcfce7 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        animation: pulse 2s ease-in-out infinite;
+      }
+    
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+    
+      .setup-icon-bg::before {
+        content: '';
+        position: absolute;
+        inset: -4px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #267357, #2d8a67, #267357);
+        opacity: 0.3;
+        animation: rotate 3s linear infinite;
+        z-index: -1;
+      }
+    
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    
+      .setup-icon-bg svg {
+        width: 48px;
+        height: 48px;
+      }
+    
+      .setup-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+      }
+    
+      .setup-description {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+    
+      .info-text {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.6;
+      }
+    
+      .setup-button {
+        width: 100%;
+        padding: 16px 24px;
+        background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(38, 115, 87, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+    
+      .setup-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(38, 115, 87, 0.3);
+      }
+    
+      .setup-button:active {
+        transform: translateY(0);
+      }
+    
+      .setup-button svg {
+        width: 20px;
+        height: 20px;
+      }
+    
+      .steps-container {
+        background: #fafafa;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 28px;
+      }
+    
+      .steps-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+    
+      .step-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        text-align: left;
+      }
+    
+      .step-item:last-child {
+        margin-bottom: 0;
+      }
+    
+      .step-number {
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+    
+      .step-text {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.4;
+      }
+    
+      /* Mobile Responsive */
+      @media (max-width: 600px) {
+        .success-header,
+        .setup-content {
+          padding: 32px 24px 24px;
         }
     
-        .stat-value.secondary {
-          color: #0f172a;
-        }
-    
-        /* Progress Bar */
-        .progress-bar-container {
-          height: 6px;
-          background: #e9ecef;
-          border-radius: 3px;
-          overflow: hidden;
-        }
-    
-        .progress-bar-fill {
-          height: 100%;
-          background: linear-gradient(90deg, #267357, #32a583);
-          border-radius: 3px;
-          transition: width 0.5s ease;
-        }
-    
-        .progress-bar-fill::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-          animation: shimmer 2s infinite;
-        }
-    
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-    
-        /* Action Tabs */
-        .action-tabs {
-          display: flex;
-          gap: 8px;
-          background: #f8f8f8;
-          padding: 4px;
-          border-radius: 30px;
-          margin-bottom: 24px;
-        }
-    
-        .tab-button {
-          flex: 1;
-          padding: 12px 20px;
-          background: transparent;
-          border: none;
-          border-radius: 30px;
-          font-size: 15px;
-          font-weight: 600;
-          color: #666;
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-    
-        .tab-button.active {
-          background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
-          color: white;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-    
-        .tab-button:hover:not(.active) {
-          background: rgba(255, 255, 255, 0.5);
-        }
-    
-        .tab-button:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-    
-        /* Form */
-        .donation-form {
-          text-align: left;
-        }
-    
-        .form-group {
-          margin-bottom: 20px;
-        }
-    
-        .form-label {
-          display: block;
-          font-size: 14px;
-          font-weight: 600;
-          color: #333;
-          margin-bottom: 8px;
-        }
-    
-        .form-input {
-          width: 100%;
-          padding: 14px 16px 14px 40px;
-          border: 2px solid #e5e5e5;
-          border-radius: 30px;
-          font-size: 18px;
-          font-weight: 600;
-          color: #333;
-          transition: all 0.2s ease;
-        }
-    
-        .form-input:focus {
-          outline: none;
-          border-color: #267357;
-          box-shadow: 0 0 0 3px rgba(38, 115, 87, 0.1);
-        }
-    
-        .form-input::placeholder {
-          color: #999;
-          font-weight: 500;
-        }
-
-        .amount-input-wrapper {
-          position: relative;
-        }
-
-        .currency-symbol {
-          position: absolute;
-          left: 16px;
-          top: 50%;
-          transform: translateY(-50%);
-          font-size: 18px;
-          font-weight: 600;
-          color: #333;
-        }
-    
-        .amount-suggestions {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 8px;
-          margin-bottom: 24px;
-          margin-top: 15px
-        }
-    
-        .amount-chip {
-          padding: 10px;
-          border: 2px solid #e5e5e5;
-          border-radius: 30px;
-          text-align: center;
-          font-size: 15px;
-          font-weight: 600;
-          color: #333;
-          background: white;
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-
-        .amount-chip.selected {
-          border-color: #267357;
-          background: #267357;
-          color: white;
-        }
-    
-        .amount-chip:hover {
-          border-color: #267357;
-          background: #267357;
-          color: white;
-        }
-    
-        /* Info Box */
-        .info-box {
-          background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
-          border: 1px solid #e0f2ed;
-          border-radius: 12px;
-          padding: 16px;
-          margin-bottom: 24px;
-        }
-    
-        .info-box svg {
-          flex-shrink: 0;
-          margin-top: 2px;
-          color: #267357
-        }
-    
-        .info-box-text {
-          font-size: 14px;
-          color: #555;
-          line-height: 1.6;
-        }
-
-        .optional-label {
-          font-size: 12px;
-          color: #999;
-          margin-left: 4px;
-        }
-    
-        /* Checkbox */
-        .checkbox-container {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          margin-bottom: 24px;
-          padding: 16px;
-          background: #fafafa;
-          border-radius: 12px;
-        }
-    
-        .checkbox-input {
-          appearance: none;
-          width: 22px;
-          height: 22px;
-          border: 2px solid #e5e5e5;
-          border-radius: 6px;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          background: white;
-        }
-    
-        .checkbox-label {
-          font-size: 13px;
-          color: #475569;
-          line-height: 1.5;
-          cursor: pointer;
-          text-align: left;
-        }
-    
-        /* Submit Button */
-        .submit-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          width: 100%;
-          padding: 16px;
-          background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
-          color: white;
-          border: none;
-          border-radius: 30px;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          box-shadow: 0 4px 12px rgba(38, 115, 87, 0.2);
-        }
-    
-        .submit-button:hover:not(:disabled) {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(21, 128, 61, 0.4);
-        }
-    
-        .submit-button:active:not(:disabled) {
-          transform: translateY(0);
-        }
-    
-        .submit-button:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-          transform: none;
-        }
-    
-        /* Back Button */
-        .back-button {
-          width: 100%;
-          background: transparent;
-          color: #64748b;
-          padding: 12px;
-          border: 2px solid #e2e8f0;
-          border-radius: 30px;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-family: inherit;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          margin-top: 12px;
-        }
-    
-        .back-button:hover {
-          border-color: #15803d;
-          color: #15803d;
-        }
-    
-        /* Payment Screen */
-        .payment-screen {
-          display: none;
-        }
-    
-        .payment-screen.active {
-          display: block;
-        }
-    
-        #stripe-payment-element {
-          margin-bottom: 20px;
-        }
-    
-        .payment-error {
-          color: #dc2626;
-          font-size: 14px;
-          margin-top: 12px;
-          text-align: center;
-        }
-    
-        /* Success/Error Screens */
-        .result-screen {
-          display: none;
-          text-align: center;
-        }
-    
-        .result-screen.active {
-          display: block;
-        }
-    
-        .result-icon {
-          width: 80px;
-          height: 80px;
-          margin: 0 auto 24px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-    
-        .result-icon.success {
-          background: #dcfce7;
-        }
-    
-        .result-icon.error {
-          background: #fee2e2;
-        }
-    
-        .result-icon svg {
-          width: 48px;
-          height: 48px;
-        }
-    
-        .result-title {
-          font-size: 24px;
-          font-weight: 700;
-          margin: 0 0 12px;
-          color: #0f172a;
-        }
-    
-        .result-message {
-          font-size: 16px;
-          color: #64748b;
-          margin: 0 0 24px;
-          line-height: 1.5;
-        }
-    
-        /* Powered By */
-        .powered-by {
-          margin-top: 24px;
-          font-size: 12px;
-          color: #94a3b8;
-          text-align: center;
-        }
-    
-        .powered-by a {
-          color: #15803d;
-          text-decoration: none;
-          font-weight: 600;
-        }
-    
-        .powered-by a:hover {
-          text-decoration: underline;
-        }
-    
-        /* Screen visibility */
-        .screen {
-          display: none;
-        }
-    
-        .screen.active {
-          display: block;
-        }
-    
-        /* Mobile Responsiveness */
-        @media (max-width: 640px) {
-          #qardhasana-widget-container {
-            padding: 24px;
-          }
-    
-          .widget-title {
-            font-size: 24px;
-          }
-    
-          .stat-value {
-            font-size: 20px;
-          }
-    
-          .progress-stats {
-            flex-direction: column;
-            gap: 12px;
-          }
-    
-          .logged-in-state {
-            flex-direction: column;
-            gap: 12px;
-            align-items: flex-start;
-          }
-    
-          .sign-out-btn {
-            width: 100%;
-          }
-        }
-
-        /* Success Styling */
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Header Section */
-        .success-header {
-            padding: 40px 32px 32px;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f0faf7 0%, #dcfce7 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: scaleIn 0.5s ease-out 0.2s both;
-        }
-
-        @keyframes scaleIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        .success-icon svg {
-            width: 48px;
-            height: 48px;
-        }
-
-        .success-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-        }
-
-        .success-subtitle {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-            max-width: 450px;
-            margin: 0 auto;
-        }
-
-        /* Content Section */
         .success-content {
-            padding: 32px;
+          padding: 24px;
         }
-
-        /* Loan Details Card */
-        .loan-details-card {
-            background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%);
-            border: 1px solid #e0f2ed;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
+    
+        .success-title,
+        .setup-title {
+          font-size: 22px;
         }
-
-        .loan-amount-section {
-            text-align: center;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #e0f2ed;
-        }
-
-        .loan-amount-label {
-            font-size: 13px;
-            color: #666;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
+    
         .success-loan-amount-value {
-            font-size: 42px;
-            font-weight: 700;
-            color: #267357;
-            line-height: 1;
+          font-size: 36px;
         }
-
-        .loan-term {
-            font-size: 14px;
-            color: #555;
-            margin-top: 8px;
+    
+        .support-amount-value {
+          font-size: 40px;
         }
-
+    
         .loan-info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+          grid-template-columns: 1fr;
+          gap: 12px;
         }
-
-        .loan-info-item {
-            text-align: center;
-        }
-
-        .loan-info-label {
-            font-size: 12px;
-            color: #666;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .loan-info-value {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        /* Important Notice Box */
-        .notice-box {
-            background: #fff9e6;
-            border: 2px solid #ffd666;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            display: flex;
-            gap: 16px;
-        }
-
-        .notice-icon {
-            flex-shrink: 0;
-            width: 24px;
-            height: 24px;
-        }
-
-        .notice-content h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-        }
-
-        .notice-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .notice-list li {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-            padding-left: 20px;
-            position: relative;
-            margin-bottom: 8px;
-        }
-
-        .notice-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .notice-list li::before {
-            content: '•';
-            position: absolute;
-            left: 6px;
-            color: #ffa940;
-            font-weight: 700;
-        }
-
-        /* Education Box */
-        .education-box {
-            background: #fafafa;
-            border: 1px solid #e5e5e5;
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-
-        .education-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .education-icon {
-            width: 32px;
-            height: 32px;
-            background: #267357;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .education-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .education-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .education-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 14px;
-            align-items: flex-start;
-        }
-
-        .education-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .education-bullet {
-            width: 6px;
-            height: 6px;
-            background: #267357;
-            border-radius: 50%;
-            margin-top: 8px;
-            flex-shrink: 0;
-        }
-
-        .education-text {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Repayment Timeline */
-        .repayment-section {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-        }
-
-        .repayment-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-        }
-
-        .repayment-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .repayment-badge {
-            background: #f0faf7;
-            color: #267357;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .repayment-info {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-
-        .btn {
-            padding: 16px 24px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 30px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #267357 0%, #2d8a67 100%);
-            color: white;
-            box-shadow: 0 4px 12px rgba(38, 115, 87, 0.2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(38, 115, 87, 0.3);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #267357;
-            border: 2px solid #e0f2ed;
-        }
-
-        .btn-secondary:hover {
-            background: #f8fffe;
-            border-color: #267357;
-        }
-
-        /* Footer */
+    
+        .setup-footer,
         .success-footer {
-            padding: 20px 32px 0px;
-            text-align: center;
-            border-top: 1px solid #f0f0f0;
+          padding: 20px 24px 24px;
         }
-
-        .footer-text {
-            font-size: 13px;
-            color: #999;
-            margin-bottom: 8px;
-        }
-
-        .footer-link {
-            color: #267357;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .success-header {
-                padding: 32px 24px 24px;
-            }
-
-            .success-content {
-                padding: 24px;
-            }
-
-            .success-title {
-                font-size: 24px;
-            }
-
-            .success-loan-amount-value {
-                font-size: 36px;
-            }
-
-            .loan-info-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .success-footer {
-                padding: 20px 24px 24px;
-            }
-        }
-      `.replace(/#15803d/g, hostColor);
+      }
+    
+    `.replace(/#15803d/g, hostColor);
     
       const styleSheet = document.createElement("style");
       styleSheet.innerText = css;
@@ -3488,384 +3967,552 @@
         modalOverlay.style.display = "none";
     
         modalOverlay.innerHTML = `
-          <div id='qardhasana-widget-container'>
-            <button type='button' class='close-button' id='close-modal'>
-              <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
-                <path d='M18 6L6 18M6 6l12 12'/>
+        <div id='qardhasana-widget-container'>
+          <button type='button' class='close-button' id='close-modal'>
+            <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
+              <path d='M18 6L6 18M6 6l12 12'/>
+            </svg>
+          </button>
+    
+          
+      <div class='screen active' id='verification-screen' style='display: none;'>
+        <div class='verification-icon'>
+          <svg width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='#3b82f6' stroke-width='2'>
+            <circle cx='12' cy='12' r='10'/>
+            <path d='M12 16v-4M12 8h.01'/>
+          </svg>
+        </div>
+        <h2 class='verification-title'>Setup Required</h2>
+        <p class='verification-message'>
+          This host needs to complete their payout account setup before accepting contributions. Please check back soon.
+        </p>
+        <a href='https://qardhasana.com/dashboard' target='_blank' class='dashboard-link'>
+          <span>Host Dashboard</span>
+          <svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
+            <path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3'/>
+          </svg>
+        </a>
+      </div>
+    
+          
+      <div class='screen active' id='selection-screen'>
+        <div style="display:flex; flex-direction:row; align-items:center">
+          <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom:24px" width="50" height="50" viewBox="0 0 24 24" fill="#267357" stroke="#267357" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake-icon lucide-heart-handshake">
+            <path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"/>
+          </svg>
+          <div class='widget-header'>
+            <h1 class='widget-title' id='host-name'></h1>
+            <p class='widget-subtitle'>Support this cause through QardHasana</p>
+          </div>
+        </div>
+    
+        <!-- Admiration Score Section -->
+        <div class='admiration-score-section' id='admiration-score-section' style='display: none;'>
+          <div class='admiration-badge-container'>
+            <div class='admiration-badge' id='admiration-badge'>
+              <div class='admiration-score-value' id='admiration-score-value'>--</div>
+              <div class='admiration-score-label'>Admiration</div>
+            </div>
+            <div class='admiration-responses' id='admiration-responses'>No feedback yet</div>
+          </div>
+          
+          <div class='admiration-tooltip' id='admiration-tooltip'>
+            <div class='admiration-tooltip-arrow'></div>
+            <div class='admiration-tooltip-content'>
+              <div class='admiration-tooltip-title'>Admiration Score Breakdown</div>
+              <div class='admiration-breakdown-item'>
+                <span class='breakdown-label'>Overall:</span>
+                <span class='breakdown-value' id='tooltip-overall'>--</span>
+              </div>
+              <div class='admiration-breakdown-item'>
+                <span class='breakdown-label'>NPS:</span>
+                <span class='breakdown-value' id='tooltip-nps'>--</span>
+              </div>
+              <div class='admiration-breakdown-item'>
+                <span class='breakdown-label'>Trust:</span>
+                <span class='breakdown-value' id='tooltip-trust'>--</span>
+              </div>
+              <div class='admiration-breakdown-item'>
+                <span class='breakdown-label'>Uniqueness:</span>
+                <span class='breakdown-value' id='tooltip-uniqueness'>--</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Authentication Section -->
+        <div class='auth-section' id='auth-section'>
+          <!-- Not logged in: Show sign-in prompt -->
+          <div class='sign-in-prompt' id='sign-in-prompt'>
+            <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#15803d' stroke-width='2'>
+              <circle cx='12' cy='12' r='10'/>
+              <path d='M12 16v-4M12 8h.01'/>
+            </svg>
+            <span>Sign in to track your contributions</span>
+            <button type='button' class='sign-in-link' id='show-sign-in-btn'>Sign in</button>
+          </div>
+    
+          <!-- Email input form -->
+          <form class='auth-form' id='email-form' style='display: none;'>
+            <div class='auth-form-header'>
+              <h3>Sign in to your account</h3>
+              <p>We'll send a code to your email</p>
+            </div>
+            <div class='form-group'>
+              <label class='form-label' for='email-input'>Email address</label>
+              <input type='email' id='email-input' class='form-input' placeholder='you@example.com' required />
+            </div>
+            <div class='auth-error' id='email-error' style='display: none;'></div>
+            <div class='auth-form-buttons'>
+              <button type='submit' class='auth-submit-btn' id='email-submit-btn'>Send Code</button>
+              <button type='button' class='auth-cancel-btn' id='cancel-email-btn'>Cancel</button>
+            </div>
+          </form>
+    
+          <!-- OTP input form -->
+          <form class='auth-form' id='otp-form' style='display: none;'>
+            <div class='auth-form-header'>
+              <h3>Enter verification code</h3>
+              <p>We sent a code to <strong id='otp-email-display'></strong></p>
+            </div>
+            <div class='form-group'>
+              <label class='form-label' for='otp-input'>4-digit code</label>
+              <input type='text' id='otp-input' class='form-input otp-input' placeholder='0000' maxlength='4' pattern='[0-9]{4}' required />
+            </div>
+            <div class='auth-error' id='otp-error' style='display: none;'></div>
+            <div class='auth-form-buttons'>
+              <button type='submit' class='auth-submit-btn' id='otp-submit-btn'>Verify</button>
+              <button type='button' class='auth-cancel-btn' id='cancel-otp-btn'>Cancel</button>
+            </div>
+            <button type='button' class='resend-link' id='resend-code-btn'>Resend Code</button>
+          </form>
+    
+          <!-- Logged in state -->
+          <div class='logged-in-state' id='logged-in-state' style='display: none;'>
+            <div class='logged-in-info'>
+              <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#15803d' stroke-width='2'>
+                <path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/>
+                <circle cx='12' cy='7' r='4'/>
               </svg>
-            </button>
+              <span>Signed in as <strong id='user-email-display'></strong></span>
+            </div>
+            <button type='button' class='sign-out-btn' id='sign-out-btn'>Sign out</button>
+          </div>
+        </div>
     
-            <!-- Host Verification Required State -->
-            <div class='screen active' id='verification-screen' style='display: none;'>
-              <div class='verification-icon'>
-                <svg width='48' height='48' viewBox='0 0 24 24' fill='none' stroke='#3b82f6' stroke-width='2'>
-                  <circle cx='12' cy='12' r='10'/>
-                  <path d='M12 16v-4M12 8h.01'/>
-                </svg>
+        <div class='action-tabs' id='action-tabs'>
+          <button type='button' class='tab-button active' data-tab='donate'>
+            <span>Support</span>
+          </button>
+          <button type='button' class='tab-button' data-tab='loan' id='loan-tab'>
+            <span>Lend</span>
+          </button>
+        </div>
+    
+        <!-- Asset Selector -->
+        <div class='asset-selector-section'>
+          <label class='form-label' for='asset-selector'>Choose what to support</label>
+          <select id='asset-selector' class='asset-select'>
+            <option value='general'>General Support</option>
+          </select>
+        </div>
+    
+        <!-- Asset/General Description -->
+        <div class='asset-description' id='asset-description'>
+          Your contribution helps the host manage ongoing operational and daily expenses.
+        </div>
+    
+        <!-- Progress Section (hidden for general support) -->
+        <div class='progress-section' id='progress-section' style='display: none;'>
+          <div class='progress-stats'>
+            <div class='stat'>
+              <div class='stat-value' id='current-amount'>$0</div>
+              <div class='stat-label'>Raised</div>
+            </div>
+            <div class='stat'>
+              <div class='stat-value secondary' id='goal-amount'>$0</div>
+              <div class='stat-label'>Goal</div>
+            </div>
+          </div>
+          <div class='progress-bar-container'>
+            <div class='progress-bar-fill' id='progress-bar-fill' style='width: 0%'></div>
+          </div>
+        </div>
+    
+        <form class='donation-form' id='donation-form'>
+          <div id='donate-content'>
+            <div class='form-group'>
+              <label class='form-label' for='amount'>Contribution Amount</label>
+              <div class="amount-input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type='number' id='amount' class='form-input' placeholder='0.00' min='5' step='5' required />
               </div>
-              <h2 class='verification-title'>Setup Required</h2>
-              <p class='verification-message'>
-                This host needs to complete their payout account setup before accepting contributions. Please check back soon.
+              <div class='amount-suggestions'>
+                <div class='amount-chip' data-amount='5'>$5</div>
+                <div class='amount-chip' data-amount='25'>$25</div>
+                <div class='amount-chip' data-amount='50'>$50</div>
+                <div class='amount-chip' data-amount='100'>$100</div>
+                <div class='amount-chip' data-amount='250'>$250</div>
+                <div class='amount-chip' data-amount='500'>$500</div>
+              </div>
+            </div>
+          </div>
+    
+          <div id='loan-content' style='display: none;'>
+            <div class='info-box'>
+              <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#15803d' stroke-width='2'>
+                <circle cx='12' cy='12' r='10'/>
+                <path d='M12 16v-4M12 8h.01'/>
+              </svg>
+              <p class='info-box-text' id='loan-info-text'>
+                Provide an interest-free loan (Qard Hasan) that will be repaid.
               </p>
-              <a href='https://qardhasana.com/dashboard' target='_blank' class='dashboard-link'>
-                <span>Host Dashboard</span>
-                <svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
-                  <path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3'/>
-                </svg>
-              </a>
             </div>
     
-            <!-- Screen 1: Asset Selection & Contribution Form -->
-            <div class='screen active' id='selection-screen'>
-              <div class='widget-header'>
-                <h1 class='widget-title' id='host-name'></h1>
-                <p class='widget-subtitle'>Support this cause through QardHasana</p>
+            <div class='form-group'>
+              <label class='form-label' for='loan-amount'>Loan Amount</label>
+              <input type='number' id='loan-amount' class='form-input' placeholder='Enter amount (min $5)' min='5' step='5' />
+              <div class='amount-suggestions'>
+                <div class='amount-chip' data-amount='1000'>$1000</div>
+                <div class='amount-chip' data-amount='2000'>$2000</div>
+                <div class='amount-chip' data-amount='3000'>$3000</div>
+                <div class='amount-chip' data-amount='5000'>$5000</div>
+              </div>
+            </div>
+    
+            <div class='form-group'>
+              <label class='form-label' for='repayment-months'>Repayment Period</label>
+              <select id='repayment-months' class='form-input' required>
+                <option value=''>Select repayment period</option>
+                <option value='3'>3 months</option>
+                <option value='4'>4 months</option>
+                <option value='5'>5 months</option>
+                <option value='6'>6 months</option>
+              </select>
+            </div>
+          </div>
+    
+          <div class='form-group'>
+            <label class='form-label' for='name'>
+              Your Name
+              <span class="optional-label">(optional)</span>
+            </label>
+            <input type='text' id='name' class='form-input' placeholder='Enter your name' />
+          </div>
+    
+          <div class='checkbox-container'>
+            <input type='checkbox' id='intent-checkbox' class='checkbox-input' required />
+            <label for='intent-checkbox' class='checkbox-label'>
+              I am contributing purely out of admiration and willingness to help, not for profit.
+            </label>
+          </div>
+    
+          <button type='submit' class='submit-button'>
+            <span id='submit-text'>Proceed to Payment</span>
+            <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
+              <path d='M5 12h14M12 5l7 7-7 7'/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    
+          
+      <div class='screen' id='payment-screen'>
+        <div class='widget-header'>
+          <h1 class='widget-title'>Complete Payment</h1>
+          <p class='widget-subtitle' id='payment-amount-text'></p>
+        </div>
+    
+        <div id='payment-element'></div>
+    
+        <div id='payment-error' class='payment-error' style='display: none;'></div>
+    
+        <button type='button' class='submit-button' id='submit-payment' disabled>
+          <span>Processing...</span>
+        </button>
+    
+        <button type='button' class='back-button' id='back-to-selection'>
+          <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
+            <path d='M19 12H5M12 19l-7-7 7-7'/>
+          </svg>
+          <span>Back</span>
+        </button>
+      </div>
+    
+          
+      <div class='screen' id='success-screen'>
+        <div id="support-success-container">
+          <!-- Header -->
+          <div class="success-header">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="3">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <h1 class="success-title">Thank You!</h1>
+            <p class="success-subtitle">
+              Your support has been successfully processed. Your generosity makes a real difference.
+            </p>
+          </div>
+    
+          <!-- Content -->
+          <div class="success-content">
+            <!-- Support Details -->
+            <div class="support-details-card">
+              <div class="support-amount-section">
+                <div class="support-amount-label">Support Amount</div>
+                <div class="support-amount-value" id="support-amount-value">$250</div>
+              </div>
+              
+              <div class="startup-info">
+                <div class="startup-label">Supporting</div>
+                <div class="startup-name" id="startup-name">TechStart Labs</div>
               </div>
     
-              <!-- Authentication Section -->
-              <div class='auth-section' id='auth-section'>
-                <!-- Not logged in: Show sign-in prompt -->
-                <div class='sign-in-prompt' id='sign-in-prompt'>
-                  <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#15803d' stroke-width='2'>
-                    <circle cx='12' cy='12' r='10'/>
-                    <path d='M12 16v-4M12 8h.01'/>
+              <div class="impact-highlight">
+                <strong>Your Impact:</strong> Your support helps cover essential operational costs and gives this startup breathing room to grow.
+              </div>
+            </div>
+    
+            <!-- Nature of Support -->
+            <div class="nature-box">
+              <div class="nature-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info-icon lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <h3 class="nature-title">Voluntary Support Contribution</h3>
+              </div>
+              <ul class="nature-list">
+                <li>This is a voluntary act of support</li>
+                <li>It is not a loan</li>
+                <li>There is no repayment expected or required</li>
+              </ul>
+            </div>
+    
+            <!-- Use of Funds -->
+            <div class="funds-section">
+              <div class="funds-header">
+                <svg class="funds-icon" viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+                <h3 class="funds-title">How Your Support Helps</h3>
+              </div>
+              <p class="funds-description">
+                Funds help founders cover daily operations, early-stage expenses, and critical survival costs during their journey to build something meaningful.
+              </p>
+              <div class="funds-note">
+                Startups will share updates whenever possible to keep you informed of their progress.
+              </div>
+            </div>
+    
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <a href="https://qardhasana.com/dashboard" class="btn btn-primary">View Dashboard</a>
+              <button class="btn btn-secondary" id="support-success-close-button">Close</button>
+            </div>
+          </div>
+    
+          <!-- Footer -->
+          <div class="success-footer">
+            <p class="footer-text">
+              Questions? <a href="https://qardhasana.com/support" class="footer-link">Contact Support</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="loan-success-container" id="loan-success-container">
+          <!-- Header -->
+          <div class="success-header">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="3">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <h1 class="success-title">Loan Confirmed!</h1>
+            <p class="success-subtitle">
+              Your Qard Hasana has been successfully processed. Thank you for your trust and generosity in supporting this cause.
+            </p>
+          </div>
+    
+          <!-- Content -->
+          <div class="success-content">
+            <!-- Loan Details -->
+            <div class="loan-details-card">
+              <div class="loan-amount-section">
+                <div class="loan-amount-label">Loan Amount</div>
+                <div class="success-loan-amount-value" id="success-loan-amount-value">$3,000</div>
+                <div class="loan-term" id="success-loan-term">To be repaid over 6 months</div>
+              </div>
+              <div class="loan-info-grid">
+                <div class="loan-info-item">
+                  <div class="loan-info-label">Monthly Payment</div>
+                  <div class="loan-info-value" id="success-monthly-payment-amount">$500</div>
+                </div>
+                <div class="loan-info-item">
+                  <div class="loan-info-label">First Payment</div>
+                  <div class="loan-info-value" id="success-loan-info-value">Jan 15, 2026</div>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Important Notice -->
+            <div class="notice-box">
+              <div class="notice-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffa940" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16v-4M12 8h.01"/>
+                </svg>
+              </div>
+              <div class="notice-content">
+                <h3>This is an Interest-Free Social Loan</h3>
+                <ul class="notice-list">
+                  <li>You will receive back only the exact loaned amount</li>
+                  <li>No interest, no guaranteed returns</li>
+                  <li>This is an act of compassion and support</li>
+                </ul>
+              </div>
+            </div>
+    
+            <!-- Education Box -->
+            <div class="education-box">
+              <div class="education-header">
+                <div class="education-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-question-mark-icon lucide-circle-question-mark">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <path d="M12 17h.01"/>
                   </svg>
-                  <span>Sign in to track your contributions</span>
-                  <button type='button' class='sign-in-link' id='show-sign-in-btn'>Sign in</button>
                 </div>
-    
-                <!-- Email input form -->
-                <form class='auth-form' id='email-form' style='display: none;'>
-                  <div class='auth-form-header'>
-                    <h3>Sign in to your account</h3>
-                    <p>We'll send a code to your email</p>
-                  </div>
-                  <div class='form-group'>
-                    <label class='form-label' for='email-input'>Email address</label>
-                    <input type='email' id='email-input' class='form-input' placeholder='you@example.com' required />
-                  </div>
-                  <div class='auth-error' id='email-error' style='display: none;'></div>
-                  <div class='auth-form-buttons'>
-                    <button type='submit' class='auth-submit-btn' id='email-submit-btn'>Send Code</button>
-                    <button type='button' class='auth-cancel-btn' id='cancel-email-btn'>Cancel</button>
-                  </div>
-                </form>
-    
-                <!-- OTP input form -->
-                <form class='auth-form' id='otp-form' style='display: none;'>
-                  <div class='auth-form-header'>
-                    <h3>Enter verification code</h3>
-                    <p>We sent a code to <strong id='otp-email-display'></strong></p>
-                  </div>
-                  <div class='form-group'>
-                    <label class='form-label' for='otp-input'>6-digit code</label>
-                    <input type='text' id='otp-input' class='form-input otp-input' placeholder='000000' maxlength='6' pattern='[0-9]{6}' required />
-                  </div>
-                  <div class='auth-error' id='otp-error' style='display: none;'></div>
-                  <div class='auth-form-buttons'>
-                    <button type='submit' class='auth-submit-btn' id='otp-submit-btn'>Verify</button>
-                    <button type='button' class='auth-cancel-btn' id='cancel-otp-btn'>Cancel</button>
-                  </div>
-                  <button type='button' class='resend-link' id='resend-code-btn'>Resend Code</button>
-                </form>
-    
-                <!-- Logged in state -->
-                <div class='logged-in-state' id='logged-in-state' style='display: none;'>
-                  <div class='logged-in-info'>
-                    <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#15803d' stroke-width='2'>
-                      <path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/>
-                      <circle cx='12' cy='7' r='4'/>
-                    </svg>
-                    <span>Signed in as <strong id='user-email-display'></strong></span>
-                  </div>
-                  <button type='button' class='sign-out-btn' id='sign-out-btn'>Sign out</button>
-                </div>
+                <h3 class="education-title">How QardHasana Works</h3>
               </div>
-    
-              <div class='action-tabs' id='action-tabs'>
-                <button type='button' class='tab-button active' data-tab='donate'>
-                  <span>Support</span>
-                </button>
-                <button type='button' class='tab-button' data-tab='loan' id='loan-tab'>
-                  <span>Lend</span>
-                </button>
-              </div>
-    
-              <!-- Asset Selector -->
-              <div class='asset-selector-section'>
-                <label class='form-label' for='asset-selector'>Choose what to support</label>
-                <select id='asset-selector' class='asset-select'>
-                  <option value='general'>General Support</option>
-                </select>
-              </div>
-    
-              <!-- Asset/General Description -->
-              <div class='asset-description' id='asset-description'>
-                Your contribution helps the host manage ongoing operational and daily expenses.
-              </div>
-    
-              <!-- Progress Section (hidden for general support) -->
-              <div class='progress-section' id='progress-section' style='display: none;'>
-                <div class='progress-stats'>
-                  <div class='stat'>
-                    <div class='stat-value' id='current-amount'>$0</div>
-                    <div class='stat-label'>Raised</div>
-                  </div>
-                  <div class='stat'>
-                    <div class='stat-value secondary' id='goal-amount'>$0</div>
-                    <div class='stat-label'>Goal</div>
-                  </div>
-                </div>
-                <div class='progress-bar-container'>
-                  <div class='progress-bar-fill' id='progress-bar-fill' style='width: 0%'></div>
-                </div>
-              </div>
-    
-              <form class='donation-form' id='donation-form'>
-                <div id='donate-content'>
-                  <!--<div class='info-box'>
-                    <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#15803d' stroke-width='2'>
-                      <circle cx='12' cy='12' r='10'/>
-                      <path d='M12 16v-4M12 8h.01'/>
-                    </svg>
-                    <p class='info-box-text'>
-                      Support this initiative with a voluntary contribution. Please note that support contributions are non-refundable.
-                    </p>
-                  </div>-->
-    
-                  <div class='form-group'>
-                    <label class='form-label' for='amount'>Contribution Amount</label>
-                    <div class="amount-input-wrapper">
-                      <span class="currency-symbol">$</span>
-                      <input type='number' id='amount' class='form-input' placeholder='0.00' min='5' step='5' required />
-                    </div>
-                    <div class='amount-suggestions'>
-                      <div class='amount-chip' data-amount='5' onclick="selectAmount(this, 5)">$5</div>
-                      <div class='amount-chip' data-amount='25' onclick="selectAmount(this, 5)">$25</div>
-                      <div class='amount-chip' data-amount='50' onclick="selectAmount(this, 5)">$50</div>
-                      <div class='amount-chip' data-amount='100' onclick="selectAmount(this, 5)">$100</div>
-                      <div class='amount-chip' data-amount='250' onclick="selectAmount(this, 5)">$250</div>
-                      <div class='amount-chip' data-amount='500' onclick="selectAmount(this, 5)">$500</div>
-                    </div>
-                  </div>
-                </div>
-    
-                <div id='loan-content' style='display: none;'>
-                  <div class='info-box'>
-                    <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#15803d' stroke-width='2'>
-                      <circle cx='12' cy='12' r='10'/>
-                      <path d='M12 16v-4M12 8h.01'/>
-                    </svg>
-                    <p class='info-box-text' id='loan-info-text'>
-                      Provide an interest-free loan (Qard Hasan) that will be repaid.
-                    </p>
-                  </div>
-    
-                  <div class='form-group'>
-                    <label class='form-label' for='loan-amount'>Loan Amount</label>
-                    <input type='number' id='loan-amount' class='form-input' placeholder='Enter amount (min $5)' min='5' step='5' />
-                    <div class='amount-suggestions'>
-                      <div class='amount-chip' data-amount='1000'>$1000</div>
-                      <div class='amount-chip' data-amount='2000'>$2000</div>
-                      <div class='amount-chip' data-amount='3000'>$3000</div>
-                      <div class='amount-chip' data-amount='5000'>$5000</div>
-                    </div>
-                  </div>
-    
-                  <div class='form-group'>
-                    <label class='form-label' for='repayment-months'>Repayment Period</label>
-                    <select id='repayment-months' class='form-input' required>
-                      <option value=''>Select repayment period</option>
-                      <option value='3'>3 months</option>
-                      <option value='4'>4 months</option>
-                      <option value='5'>5 months</option>
-                      <option value='6'>6 months</option>
-                    </select>
-                  </div>
-                </div>
-    
-                <div class='form-group'>
-                  <label class='form-label' for='name'>
-                    Your Name
-                    <span class="optional-label">(optional)</span>
-                  </label>
-                  <input type='text' id='name' class='form-input' placeholder='Enter your name' />
-                </div>
-    
-                <div class='checkbox-container'>
-                  <input type='checkbox' id='intent-checkbox' class='checkbox-input' required />
-                  <label for='intent-checkbox' class='checkbox-label'>
-                    I am contributing purely out of admiration and willingness to help, not for profit.
-                  </label>
-                </div>
-    
-                <button type='submit' class='submit-button'>
-                  <span id='submit-text'>Proceed to Payment</span>
-                  <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
-                    <path d='M5 12h14M12 5l7 7-7 7'/>
-                  </svg>
-                </button>
-              </form>
+              <ul class="education-list">
+                <li class="education-item">
+                  <div class="education-bullet"></div>
+                  <div class="education-text">Your loan supports operational and survival needs of early-stage startups</div>
+                </li>
+                <li class="education-item">
+                  <div class="education-bullet"></div>
+                  <div class="education-text">You are helping someone avoid interest-based debt</div>
+                </li>
+                <li class="education-item">
+                  <div class="education-bullet"></div>
+                  <div class="education-text">Extensions in repayment are considered acts of compassion</div>
+                </li>
+                <li class="education-item">
+                  <div class="education-bullet"></div>
+                  <div class="education-text">You'll be notified if the host needs more time</div>
+                </li>
+              </ul>
             </div>
     
-            <!-- Screen 2: Payment -->
-            <div class='screen' id='payment-screen'>
-              <div class='widget-header'>
-                <h1 class='widget-title'>Complete Payment</h1>
-                <p class='widget-subtitle' id='payment-amount-text'></p>
+            <!-- Repayment Section -->
+            <div class="repayment-section">
+              <div class="repayment-header">
+                <h3 class="repayment-title">Repayment Updates</h3>
+                <span class="repayment-badge">Active</span>
               </div>
-    
-              <div id='payment-element'></div>
-    
-              <div id='payment-error' class='payment-error' style='display: none;'></div>
-    
-              <button type='button' class='submit-button' id='submit-payment' disabled>
-                <span>Processing...</span>
-              </button>
-    
-              <button type='button' class='back-button' id='back-to-selection'>
-                <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
-                  <path d='M19 12H5M12 19l-7-7 7-7'/>
-                </svg>
-                <span>Back</span>
-              </button>
+              <p class="repayment-info">
+                You'll receive email notifications for each monthly repayment. You can track your loan status anytime in your dashboard.
+              </p>
             </div>
     
-            <!-- Screen 3: Success -->
-            <div class='screen' id='success-screen'>
-              <div class="success-container">
-                  <!-- Header -->
-                  <div class="success-header">
-                      <div class="success-icon">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="3">
-                              <path d="M20 6L9 17l-5-5"/>
-                          </svg>
-                      </div>
-                      <h1 class="success-title">Loan Confirmed!</h1>
-                      <p class="success-subtitle">
-                          Your Qard Hasana has been successfully processed. Thank you for your trust and generosity in supporting this cause.
-                      </p>
-                  </div>
-
-                  <!-- Content -->
-                  <div class="success-content">
-                      <!-- Loan Details -->
-                      <div class="loan-details-card">
-                          <div class="loan-amount-section">
-                              <div class="loan-amount-label">Loan Amount</div>
-                              <div class="success-loan-amount-value" id="success-loan-amount-value">$3,000</div>
-                              <div class="loan-term" id="success-loan-term">To be repaid over 6 months</div>
-                          </div>
-                          <div class="loan-info-grid">
-                              <div class="loan-info-item">
-                                  <div class="loan-info-label">Monthly Payment</div>
-                                  <div class="loan-info-value" id="success-monthly-payment-amount">$500</div>
-                              </div>
-                              <div class="loan-info-item">
-                                  <div class="loan-info-label">First Payment</div>
-                                  <div class="loan-info-value" id="success-loan-info-value">Jan 15, 2026</div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <!-- Important Notice -->
-                      <div class="notice-box">
-                          <div class="notice-icon">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffa940" stroke-width="2">
-                                  <circle cx="12" cy="12" r="10"/>
-                                  <path d="M12 16v-4M12 8h.01"/>
-                              </svg>
-                          </div>
-                          <div class="notice-content">
-                              <h3>This is an Interest-Free Social Loan</h3>
-                              <ul class="notice-list">
-                                  <li>You will receive back only the exact loaned amount</li>
-                                  <li>No interest, no guaranteed returns</li>
-                                  <li>This is an act of compassion and support</li>
-                              </ul>
-                          </div>
-                      </div>
-
-                      <!-- Education Box -->
-                      <div class="education-box">
-                          <div class="education-header">
-                              <div class="education-icon">
-                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                      <circle cx="12" cy="12" r="10"/>
-                                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                                      <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                  </svg>
-                              </div>
-                              <h3 class="education-title">How QardHasana Works</h3>
-                          </div>
-                          <ul class="education-list">
-                              <li class="education-item">
-                                  <div class="education-bullet"></div>
-                                  <div class="education-text">Your loan supports operational and survival needs of early-stage startups</div>
-                              </li>
-                              <li class="education-item">
-                                  <div class="education-bullet"></div>
-                                  <div class="education-text">You are helping someone avoid interest-based debt</div>
-                              </li>
-                              <li class="education-item">
-                                  <div class="education-bullet"></div>
-                                  <div class="education-text">Extensions in repayment are considered acts of compassion</div>
-                              </li>
-                              <li class="education-item">
-                                  <div class="education-bullet"></div>
-                                  <div class="education-text">You'll be notified if the host needs more time</div>
-                              </li>
-                          </ul>
-                      </div>
-
-                      <!-- Repayment Section -->
-                      <div class="repayment-section">
-                          <div class="repayment-header">
-                              <h3 class="repayment-title">Repayment Updates</h3>
-                              <span class="repayment-badge">Active</span>
-                          </div>
-                          <p class="repayment-info">
-                              You'll receive email notifications for each monthly repayment. You can track your loan status anytime in your dashboard.
-                          </p>
-                      </div>
-
-                      <!-- Action Buttons -->
-                      <div class="action-buttons">
-                          <a href="#" class="btn btn-primary" id="success-view-loan-dashboard">View Loan Dashboard</a>
-                          <button class="btn btn-secondary" id="success-close-button">Close</button>
-                      </div>
-                  </div>
-
-                  <!-- Footer -->
-                  <div class="success-footer">
-                      <p class="footer-text">
-                          Questions? <a href="https://qardhasana.com/contact" class="footer-link">Contact Support</a>
-                      </p>
-                  </div>
-              </div>
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <a href="https://www.qardhasana.com/dashboard" class="btn btn-primary" id="success-view-loan-dashboard">View Loan Dashboard</a>
+              <button class="btn btn-secondary" id="success-close-button">Close</button>
             </div>
+          </div>
     
-            <!-- Screen 4: Error -->
-            <div class='screen' id='error-screen'>
-              <div class='result-icon error'>
-                <svg viewBox='0 0 24 24' fill='none' stroke='#dc2626' stroke-width='2'>
-                  <path d='M18 6L6 18M6 6l12 12'/>
+          <!-- Footer -->
+          <div class="success-footer">
+            <p class="footer-text">
+              Questions? <a href="https://qardhasana.com/contact" class="footer-link">Contact Support</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    
+          
+      <div class='screen' id='error-screen'>
+        <div class='result-icon error'>
+          <svg viewBox='0 0 24 24' fill='none' stroke='#dc2626' stroke-width='2'>
+            <path d='M18 6L6 18M6 6l12 12'/>
+          </svg>
+        </div>
+        <h2 class='result-title'>Payment Failed</h2>
+        <p class='result-message' id='error-message'></p>
+        <button type='button' class='submit-button' id='try-again'>
+          <span>Try Again</span>
+        </button>
+        <button type='button' class='back-button' id='close-error'>
+          <span>Close</span>
+        </button>
+      </div>
+    
+          
+      <div class="screen" id="host-setup-screen">
+        <div class="setup-container">
+          <div class="setup-content">
+            <!-- Icon --> 
+            <div class="setup-icon-wrapper">
+              <div class="setup-icon-bg">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M9 12l2 2 4-4"/>
                 </svg>
               </div>
-              <h2 class='result-title'>Payment Failed</h2>
-              <p class='result-message' id='error-message'></p>
-              <button type='button' class='submit-button' id='try-again'>
-                <span>Try Again</span>
-              </button>
-              <button type='button' class='back-button' id='close-error'>
-                <span>Close</span>
-              </button>
             </div>
     
-            <div class='powered-by'>
-              Powered by <a href='https://qardhasana.com' target='_blank'>QardHasana</a>
+            <!-- Title & Description -->
+            <h1 class="setup-title">Setup Required</h1>
+            <p class="setup-description">
+              This contribution widget is ready to go, but payout setup needs to be completed before accepting contributions.
+            </p>
+    
+            <!-- Info Box for Host -->
+            <div class="info-box">
+              <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="#267357" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4M12 8h.01"/>
+              </svg>
+              <p class="info-text">
+                <strong>If you're the host</strong>, click below to complete your payout account setup.
+              </p>
             </div>
-          </div>`;
+    
+            <!-- Quick Steps -->
+            <div class="steps-container">
+              <div class="steps-title">Quick Setup Steps:</div>
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-text">Connect your bank account or payment method</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">Verify your identity (required by regulations)</div>
+              </div>
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">Start accepting contributions immediately</div>
+              </div>
+            </div>
+    
+            <!-- Button -->
+            <a href="https://qardhasana.com/dashboard" class="setup-button">
+              <span>Go to Dashboard</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+    
+          <div class='powered-by'>
+            Powered by <a href='https://qardhasana.com' target='_blank'>QardHasana</a>
+          </div>
+        </div>
+      `;
     
         document.body.appendChild(modalOverlay);
     
@@ -3885,14 +4532,15 @@
     
         // Check for existing session on load
         async function checkExistingSession() {
-          const token = localStorage.getItem(TOKEN_KEY);
-          if (!token) return;
+          // const token = localStorage.getItem(TOKEN_KEY);
+          // if (!token) return;
+
+          console.log("about to check existing session");
     
           try {
-            const response = await fetch('https://qardhasana.com/_api/widget/auth/session', {
-              method: 'POST',
+            const response = await fetch('https://qardhasana.com/_api/auth/session', {
+              method: 'GET',
               headers: {},
-              body: JSON.stringify({ token }),
             });
     
             const text = await response.text();
@@ -3903,6 +4551,8 @@
             } catch (e) {
               throw new Error('Invalid response format');
             }
+
+            console.log("auth session response:", data);
     
             if (response.ok && data.success) {
               authToken = token;
@@ -4012,8 +4662,8 @@
           const submitBtn = document.getElementById('otp-submit-btn');
           const errorDiv = document.getElementById('otp-error');
     
-          if (!otp || otp.length !== 6) {
-            errorDiv.textContent = 'Please enter a valid 6-digit code';
+          if (!otp || otp.length !== 4) {
+            errorDiv.textContent = 'Please enter a valid 4-digit code';
             errorDiv.style.display = 'block';
             return;
           }
@@ -4159,8 +4809,8 @@
             promptDiv.id = 'stripe-setup-prompt';
             promptDiv.className = 'stripe-setup-prompt';
             promptDiv.innerHTML = `
-              <div style="margin-bottom: 10px; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 1px solid #a7f3d0; border-radius: 12px; padding: 24px; text-align: center;">
-                <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(21, 128, 61, 0.2);">
+              <div style="background: linear-gradient(135deg, #f8fffe 0%, #f0faf7 100%); border: 1px solid #e0f2ed; border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+                <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: linear-gradient(135deg, #267357 0%, #2d8a67 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(21, 128, 61, 0.2);">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                     <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
                     <line x1="1" y1="10" x2="23" y2="10"/>
@@ -4171,10 +4821,10 @@
                   To provide a loan, you need to set up a payout account to receive repayments securely.
                 </p>
                 <div style="display: flex; gap: 8px; justify-content: center;">
-                  <button id="setup-payout-btn" style="flex: 1; max-width: 200px; background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); color: white; padding: 12px 20px; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(21, 128, 61, 0.3);">
+                  <button id="setup-payout-btn" style="flex: 1; max-width: 200px; background: linear-gradient(135deg, #267357 0%, #2d8a67 100%); color: white; padding: 12px 20px; border: none; border-radius: 30px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(21, 128, 61, 0.3);">
                     Set Up Account
                   </button>
-                  <button id="cancel-stripe-setup-btn" style="flex: 1; max-width: 120px; background: white; color: #64748b; padding: 12px 20px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                  <button id="cancel-stripe-setup-btn" style="flex: 1; max-width: 120px; background: white; color: #64748b; padding: 12px 20px; border: 2px solid #e2e8f0; border-radius: 30px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
                     Cancel
                   </button>
                 </div>
@@ -4206,7 +4856,7 @@
             });
             
             setupBtn.addEventListener('click', () => {
-              window.open(window.location.origin + '/dashboard/supporter', '_blank');
+              window.open('https://qardhasana.com/dashboard', '_blank');
             });
             
             cancelBtn.addEventListener('click', () => {
@@ -4234,8 +4884,8 @@
             promptDiv.id = 'loan-login-prompt';
             promptDiv.className = 'loan-login-prompt';
             promptDiv.innerHTML = `
-              <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 1px solid #bfdbfe; border-radius: 12px; padding: 24px; text-align: center;">
-                <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);">
+              <div style="background: linear-gradient(135deg, #ebfcf6 0%, #d7faec 100%); border: 1px solid #6efac2; border-radius: 12px; padding: 24px; text-align: center; margin-block: 30px;">
+                <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: linear-gradient(135deg, #267357 0%, #2d8a67 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                   </svg>
@@ -4244,7 +4894,7 @@
                 <p style="font-size: 14px; color: #475569; line-height: 1.6; margin: 0 0 20px;">
                   Please sign in to provide a loan. This helps us manage repayments securely and track your contributions.
                 </p>
-                <button id="loan-sign-in-btn" style="background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); color: white; padding: 12px 32px; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 8px rgba(21, 128, 61, 0.3); display: inline-flex; align-items: center; gap: 8px;">
+                <button id="loan-sign-in-btn" style="color: white; padding: 12px 32px; border: none; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; background: linear-gradient(135deg, #267357 0%, #2d8a67 100%); box-shadow: 0 4px 12px rgba(38, 115, 87, 0.2); display: inline-flex; align-items: center; gap: 8px;">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/>
                   </svg>
@@ -4269,10 +4919,18 @@
             
             signInBtn.addEventListener('click', () => {
               showSignInForm();
+              // Scroll to top where the sign in form appears
+              const dialogBody = document.getElementById('qardhasana-widget-container');
+              dialogBody.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+              });
             });
+    
+            loginPrompt.style.display = 'block';
           }
-          
-          loginPrompt.style.display = 'block';
+    
+          // loginPrompt.style.display = 'block';
           
           // Hide the actual loan form
           const loanForm = loanContent.querySelector('.loan-form-fields');
@@ -4322,6 +4980,9 @@
     
     
         
+        // State for contributions and admiration score
+        let admirationScoreData = null;
+        
         // State for contributions
         let contributionsLoaded = false;
         let contributionsExpanded = false;
@@ -4331,6 +4992,12 @@
     
         // Initialize widget with data
         function initializeWidget() {
+    
+          // Amount Input
+          document.getElementById('amount').max = 500;
+
+          console.log("about to check for auth session 1")
+        
           // Check for existing session
           checkExistingSession();
           
@@ -4339,6 +5006,9 @@
           
           // Set host name
           document.getElementById('host-name').textContent = widgetData.host.displayName;
+          
+          // Initialize admiration score display
+          initializeAdmirationScore();
     
           // Check if verification is required
           if (widgetData.requiresStripeSetup) {
@@ -4498,6 +5168,87 @@
           listContainer.innerHTML = html;
         }
     
+        function initializeAdmirationScore() {
+          if (!widgetData.admirationScore) return;
+    
+          admirationScoreData = widgetData.admirationScore;
+          const section = document.getElementById('admiration-score-section');
+          const badge = document.getElementById('admiration-badge');
+          const scoreValue = document.getElementById('admiration-score-value');
+          const responsesText = document.getElementById('admiration-responses');
+    
+          if (!section || !badge || !scoreValue || !responsesText) return;
+    
+          const { overallScore, totalResponses } = admirationScoreData;
+    
+          // Show section if there's data
+          if (totalResponses > 0 || overallScore !== null) {
+            section.style.display = 'block';
+    
+            if (totalResponses === 0 || overallScore === null) {
+              // New badge
+              scoreValue.textContent = 'New';
+              responsesText.textContent = 'No feedback yet';
+              badge.className = 'admiration-badge score-new';
+            } else {
+              // Show score
+              scoreValue.textContent = Math.round(overallScore);
+              responsesText.textContent = 'Based on ' + totalResponses + ' response' + (totalResponses === 1 ? '' : 's');
+    
+              // Apply color coding
+              if (overallScore >= 80) {
+                badge.className = 'admiration-badge score-excellent';
+              } else if (overallScore >= 60) {
+                badge.className = 'admiration-badge score-good';
+              } else if (overallScore >= 40) {
+                badge.className = 'admiration-badge score-fair';
+              } else {
+                badge.className = 'admiration-badge score-low';
+              }
+            }
+    
+            // Set up tooltip
+            setupAdmirationTooltip();
+          }
+        }
+    
+        function setupAdmirationTooltip() {
+          const badge = document.getElementById('admiration-badge');
+          const tooltip = document.getElementById('admiration-tooltip');
+          
+          if (!badge || !tooltip || !admirationScoreData) return;
+    
+          const { overallScore, npsScore, trustScore, uniquenessScore } = admirationScoreData;
+    
+          // Update tooltip content
+          document.getElementById('tooltip-overall').textContent = overallScore !== null ? Math.round(overallScore) + '/100' : '--';
+          document.getElementById('tooltip-nps').textContent = npsScore !== null ? npsScore.toFixed(1) + '/10' : '--';
+          document.getElementById('tooltip-trust').textContent = trustScore !== null ? trustScore.toFixed(1) + '/5' : '--';
+          document.getElementById('tooltip-uniqueness').textContent = uniquenessScore !== null ? uniquenessScore.toFixed(1) + '/5' : '--';
+    
+          // Show/hide tooltip on hover/tap
+          badge.addEventListener('mouseenter', function() {
+            tooltip.classList.add('show');
+          });
+    
+          badge.addEventListener('mouseleave', function() {
+            tooltip.classList.remove('show');
+          });
+    
+          // For mobile - toggle on tap
+          badge.addEventListener('click', function(e) {
+            e.stopPropagation();
+            tooltip.classList.toggle('show');
+          });
+    
+          // Close tooltip when clicking outside
+          document.addEventListener('click', function(e) {
+            if (!badge.contains(e.target) && !tooltip.contains(e.target)) {
+              tooltip.classList.remove('show');
+            }
+          });
+        }
+    
         function updateAssetDisplay() {
           const progressSection = document.getElementById('progress-section');
           const assetDescription = document.getElementById('asset-description');
@@ -4531,7 +5282,7 @@
             assetDescription.textContent = asset.shortDescription || 'Support this specific asset.';
     
             // Show loan option
-            loanTab.style.display = 'flex';
+            loanTab.style.display = 'block';
             
             // Update loan info text with repayment capable amount
             loanInfoText.textContent = 'Provide an interest-free loan (Qard Hasan) that will be repaid. Maximum loan amount: $' + asset.repaymentCapableAmount.toLocaleString();
@@ -4562,41 +5313,11 @@
           document.body.style.overflow = 'hidden';
           
           initializeWidget();
-
-          // let contributionData = {
-          //   assetId: "3", // null for general support, or specific asset ID
-          //   amount: 2000,
-          //   name: name || 'Anonymous',
-          //   type: "loan",
-          //   repaymentMonths: 6,
-          // };
     
-
-          // // const successMessage = '\nYour contribution of $100'+ ' has been processed successfully. Thank you for your support!';
-          // //   document.getElementById('success-message').textContent = successMessage;
-          // // document.getElementById('result-title').innerHTML = "Loan Confirmed!";
-          // document.getElementById('success-loan-amount-value').innerHTML = `$${contributionData.amount.toString()}`;
-          // // Monthly amount
-          // document.getElementById('success-loan-info-value').innerHTML = "sample";
-          // // First repayment date
-          // const date = new Date();
-          // date.setDate(date.getDate() + 30);
-          // // Formatted
-          // const firstRepaymentDate = date.toLocaleDateString("en-US", {
-          //   month: "short",
-          //   day: "2-digit",
-          //   year: "numeric",
-          // });
-          // document.getElementById('success-monthly-payment-amount').innerHTML = `$${(contributionData.amount/contributionData.repaymentMonths).toFixed(2)}`;
-          // document.getElementById('success-loan-info-value').innerHTML = firstRepaymentDate;
-          // document.getElementById('success-view-loan-dashboard').addEventListener("click", ()=> {
-          //   window.location.href = "https://www.qardhasana.com/dashboard";
-          // });
-          // document.getElementById('success-close-button').addEventListener("click", ()=> {
-          //   closeModal();
-          // });
-          // document.getElementById('success-loan-term').innerHTML = "To be repaid over " + contributionData.repaymentMonths + " months";
-          // showScreen('success-screen');
+          // Check if host stripe payouts setup
+          if (!(widgetData.host.stripeAccountId) && !widgetData.host.stripeVerified) {
+            showScreen('host-setup-screen');
+          }
         }
     
         function closeModal() {
@@ -4649,7 +5370,12 @@
             loanInputs.forEach(i => i.required = true);
     
             // Hide name field for loans
-            document.getElementById("name").style = "none";
+            document.getElementById("name").style.display = "none";
+            
+            // Amount input
+            const selectedAsset = widgetData.assets.find(asset=> asset.id == selectedAssetId);
+            const maxFundable = selectedAsset.fundGoal - selectedAsset.currentAmountRaised;
+            document.getElementById("amount").max = maxFundable>5000? 5000 : maxFundable;
             
             // Check loan availability when switching to loan tab
             updateLoanTabAvailability();
@@ -4859,6 +5585,7 @@
                   repaymentMonths: contributionData.repaymentMonths,
                   lenderName: contributionData.name,
                   lenderDisclaimerAccepted: true,
+                  supporterId: currentUser.id.toString()
                 };
     
             // Include auth token if available
@@ -4890,27 +5617,40 @@
             // const successMessage = 'Your ' + contributionData.type + ' of $' + 
             //   contributionData.amount.toFixed(2) + ' has been processed successfully. Thank you for your support!';
             // document.getElementById('success-message').textContent = successMessage;
-            document.getElementById('success-loan-amount-value').innerHTML = "$" + contributionData.amount.toString();
-            // Monthly amount
-            document.getElementById('success-loan-info-value').innerHTML = "sample";
-            // First repayment date
-            const date = new Date();
-            date.setDate(date.getDate() + 30);
-            // Formatted
-            const firstRepaymentDate = date.toLocaleDateString("en-US", {
-              month: "short",
-              day: "2-digit",
-              year: "numeric",
-            });
-            document.getElementById('success-monthly-payment-amount').innerHTML = (contributionData.amount/contributionData.repaymentMonths).toFixed(2);
-            document.getElementById('success-loan-info-value').innerHTML = firstRepaymentDate;
-            document.getElementById('success-view-loan-dashboard').addEventListener("click", ()=> {
-              window.location.href = "https://www.qardhasana.com/dashboard";
-            });
-            document.getElementById('success-close-button').addEventListener("click", ()=> {
-              closeModal();
-            });
-            document.getElementById('success-loan-term').innerHTML = "To be repaid over " + contributionData.repaymentMonths + " months";
+            if (contributionData.type === "loan") {
+              document.getElementById('success-loan-amount-value').innerHTML = "$" + contributionData.amount.toString();
+              // Monthly amount
+              document.getElementById('success-loan-info-value').innerHTML = "sample";
+              // First repayment date
+              const date = new Date();
+              date.setDate(date.getDate() + 30);
+              // Formatted
+              const firstRepaymentDate = date.toLocaleDateString("en-US", {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+              });
+              document.getElementById('success-monthly-payment-amount').innerHTML = (contributionData.amount/contributionData.repaymentMonths).toFixed(2);
+              document.getElementById('success-loan-info-value').innerHTML = firstRepaymentDate;
+    
+              document.getElementById('success-loan-term').innerHTML = "To be repaid over " + contributionData.repaymentMonths + " months";
+              document.getElementById('loan-success-container').style.display = 'block';
+              document.getElementById('support-success-container').style.display = 'none';
+              document.getElementById('success-close-button').addEventListener("click", ()=> {
+                closeModal();
+              });
+            } else {
+              document.getElementById('support-amount-value').innerHTML = '$'+contributionData.amount.toString();
+              document.getElementById('startup-name').innerHTML = widgetData.host.displayName;
+    
+              document.getElementById('loan-success-container').style.display = 'none';
+              document.getElementById('support-success-container').style.display = 'block';
+    
+              document.getElementById('support-success-close-button').addEventListener("click", ()=> {
+                closeModal();
+              });
+            }
+    
             showScreen('success-screen');
           } catch (error) {
             console.error('Payment error:', error);
@@ -4939,6 +5679,11 @@
             selectedAssetId = null;
           } else {
             selectedAssetId = parseInt(value);
+    
+            // Amount Input
+            const selectedAsset = widgetData.assets.find(asset=> asset.id == selectedAssetId);
+            const maxFundable = selectedAsset.fundGoal - selectedAsset.currentAmountRaised;
+            document.getElementById('amount').max = maxFundable<=500? maxFundable : 500;
           }
           updateAssetDisplay();
         });
@@ -4982,6 +5727,8 @@
         renderWidget();
       }
     })();
+    
+        
     
     </script>
 
